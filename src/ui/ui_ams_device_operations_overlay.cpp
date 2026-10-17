@@ -242,6 +242,14 @@ void AmsDeviceOperationsOverlay::register_callbacks() {
                      get_ams_device_operations_overlay().refresh();
                  });
          }},
+        {"on_ams_spool_scan_method_changed",
+         [](lv_event_t* e) {
+             const int index = helix::ui::event_selected(e);
+             if (index >= 0 && index < SPOOL_SCAN_METHOD_COUNT) {
+                 SettingsManager::instance().set_ams_spool_scan_method(
+                     static_cast<SpoolScanMethod>(index));
+             }
+         }},
         {"on_ams_section_clicked",
          [](lv_event_t* e) {
              auto& self = get_ams_device_operations_overlay();

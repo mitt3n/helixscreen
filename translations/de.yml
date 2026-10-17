@@ -666,6 +666,7 @@ translations:
   Choose Filament: Filament auswählen
   Choose Layer: 'Schicht wählen'
   Choose Model: Modell auswählen
+  Choose Spool: 'Spule auswählen'
   Choose an existing filament, or tap + New to create one.: Vorhandenes Filament wählen
     oder + Neu tippen.
   Choose display language: Anzeigesprache wählen
@@ -1821,6 +1822,7 @@ translations:
   K so far: 'Bisheriges K'
   KEYBOARD LAYOUT: TASTATURLAYOUT
   KLICKY CONTROLS: KLICKY-STEUERUNG
+  Keep: 'Behalten'
   Keep Navigation Bar: Navigationsleiste behalten
   Keep Printing: Weiter drucken
   Keep Spool Info on Eject: Spuleninfo beim Auswerfen behalten
@@ -1929,6 +1931,7 @@ translations:
   Line {} calls {}, which this printer treats as an emergency stop. Re-slice the file with a profile made for this printer.: 'Zeile {} ruft {} auf, das dieser Drucker als Notaus behandelt. Slicen Sie die Datei mit einem Profil für diesen Drucker neu.'
   Linear rails: 'Linearschienen'
   Linear rails interval: 'Intervall Linearschienen'
+  Link to Spoolman?: 'Mit Spoolman verknüpfen?'
   Listen to all theme sounds: Alle Themensounds anhören
   Live Z-offset, with baby steps and Save: Live-Z-Offset mit Feinjustierung und Speichern
   Live view from your webcam: Livebild Ihrer Webcam
@@ -2280,6 +2283,7 @@ translations:
   No spools match your search: Keine Spulen entsprechen Ihrer Suche
   No spools placed: Keine Spulen eingelegt
 
+  No tag read: 'Kein Tag gelesen'
   No tape detected in printer: Kein Band im Drucker erkannt
   No target printer configured: Kein Zieldrucker konfiguriert
   No temperature sensors detected: 'Keine Temperatursensoren erkannt'
@@ -2368,6 +2372,7 @@ translations:
   Objects: Objekte
   Objects in the print, with a tap to open the skip map: 'Objekte des Drucks, per Tipp zur Überspringen-Karte'
   'Off': Aus
+  Off, QR code, or the spool's RFID tag where this system reads tags: 'Aus, QR-Code oder das RFID-Tag der Spule, sofern dieses System Tags liest'
   'Off:': 'Aus:'
   'Off: runs with these values without asking': 'Aus: führt diese Werte aus, ohne zu fragen'
   Offer to save Z-offset changes to the printer config: 'Anbieten, Z-Offset-Änderungen in der Druckerkonfiguration zu speichern'
@@ -2752,6 +2757,7 @@ translations:
   'QGL failed: {}': 'QGL fehlgeschlagen: {}'
   QGL may still be running — response timed out: QGL läuft möglicherweise noch — Zeitüberschreitung
   QGL timed out: QGL Zeitüberschreitung
+  QR Code: 'QR-Code'
   QR Only: Nur QR
   QUEUED EVENTS: WARTESCHLANGE
   QUICK BUTTONS: SCHNELLTASTEN
@@ -2774,6 +2780,7 @@ translations:
   RAM: RAM
   RFCOMM connect failed: RFCOMM-Verbindung fehlgeschlagen
   'RFCOMM connect failed: ': 'RFCOMM-Verbindung fehlgeschlagen: '
+  RFID: 'RFID'
   RFID reader malfunction (left): Fehlfunktion des RFID-Lesers (links)
   RFID reader malfunction (right): Fehlfunktion des RFID-Lesers (rechts)
   RFID, auto-refill, nozzle and link care: RFID, automatisches Nachfüllen, Düsen- und Verbindungspflege
@@ -2796,6 +2803,7 @@ translations:
     Hare erfassten Status erneut mit der Hardware.
   Re-test A: A neu testen
   Re-test B: B neu testen
+  Reading the tag in {}…: 'Tag in {} wird gelesen…'
   Readings from extra temperature sensors: Werte zusätzlicher Temperatursensoren
   Ready: Bereit
   Ready for filament operations: Bereit für Filament-Vorgänge
@@ -3081,6 +3089,7 @@ translations:
   Scan: Suchen
   Scan Cal: Scan-Kal.
   Scan QR Code: QR-Code scannen
+  Scan RFID: 'RFID scannen'
   Scan Spool QR Code: Spulen-QR-Code scannen
   Scan and select a Bluetooth printer first: Zuerst Bluetooth-Drucker suchen und auswählen
   Scan for Printers: Nach Druckern suchen
@@ -3311,6 +3320,7 @@ translations:
   'Spool #{}': 'Spule #{}'
   Spool Info: Spuleninfo
   Spool Not Found: 'Spule nicht gefunden'
+  Spool Scan Button: 'Spulen-Scan-Taste'
   Spool Weight (g): Spulengewicht (g)
   Spool archived: Spule archiviert
   Spool created successfully: Spule erfolgreich erstellt
@@ -3333,6 +3343,7 @@ translations:
   Spoolman needs a color for this filament.: Spoolman benötigt eine Farbe für dieses Filament.
   Spoolman needs a material for this filament.: Spoolman benötigt ein Material für dieses Filament.
   Spoolman removed.: Spoolman entfernt.
+  'Spoolman spool #{} updated from the tag': 'Spoolman-Spule #{} anhand des Tags aktualisiert'
   Spoolman unavailable — filament weights may be stale: Spoolman nicht verfügbar —
     Filamentgewichte können veraltet sein
   Spoolman was not configured.: Spoolman war nicht konfiguriert.
@@ -3460,7 +3471,10 @@ translations:
   'TOGGLE: {}': 'UMSCHALTEN: {}'
   TOOLS: WERKZEUGE
   TPU: TPU
+  Tag Doesn't Match Spoolman: 'Tag passt nicht zu Spoolman'
   Tag Parts: Bauteile markieren
+  Tag read failed: 'Tag konnte nicht gelesen werden'
+  'Tag read: review and Save': 'Tag gelesen: prüfen und speichern'
   Takes 3-5 min. Do not interrupt.: Dauert 3-5 Min. Nicht unterbrechen.
   Tangle prevention active: Verwicklungsschutz aktiv
   Tangle prevention boosted: Verwicklungsschutz verstärkt
@@ -3629,6 +3643,8 @@ translations:
     zeigt an, dass kein Filament geladen ist. Druck trotzdem starten?
   The sensor in this CFS unit cannot be read. Check its connection, or the unit may need service: Der Sensor dieser CFS-Einheit lässt sich nicht auslesen. Anschluss prüfen, andernfalls muss die Einheit gewartet werden
   The speed of one fan you choose: Drehzahl eines gewählten Lüfters
+  The tag lacks a brand, material or colour Spoolman needs: 'Dem Tag fehlt eine Marke, ein Material oder eine Farbe, die Spoolman benötigt'
+  The tag matches this spool: 'Das Tag passt zu dieser Spule'
   The time, date, and system uptime: Uhrzeit, Datum und Betriebszeit
   The toolhead has filament but no AMS slot reports it loaded. Pull it out manually before printing. Start anyway?: Im Werkzeugkopf befindet sich Filament, aber kein AMS-Slot meldet es als geladen. Ziehen Sie es vor dem Drucken manuell heraus. Trotzdem starten?
   ? The toolhead has filament but no AMS slot reports it loaded. The printer may refuse to load a slot until it is cleared. Start anyway?
@@ -3929,6 +3945,7 @@ translations:
   Update Failed: Update fehlgeschlagen
   Update Helper Macros: 'Hilfsmakros aktualisieren'
   Update Helper Macros?: 'Hilfsmakros aktualisieren?'
+  Update Spoolman: 'Spoolman aktualisieren'
   Update Success: Update erfolgreich
   Update from a Terminal: Update über ein Terminal
   Update installed!: Update installiert!
@@ -4195,6 +4212,7 @@ translations:
   never sleeps: schläft nie
   not detected: nicht erkannt
   not loaded: 'nicht geladen'
+  nothing: 'nichts'
   nozzle: Düse
   of: von
   'off': aus
@@ -4277,6 +4295,7 @@ translations:
   '{} kept crashing the panel; pick a printer to connect': '{} hat den Bildschirm wiederholt abstürzen lassen; Drucker zum Verbinden auswählen'
   '{} m': '{} m'
   '{} macro not configured': '{}-Makro nicht konfiguriert'
+  '{} matches Spoolman spool #{}': '{} passt zu Spoolman-Spule #{}'
   '{} matches.': '{} passt.'
   '{} may cause unintended changes. Are you sure?': '{} kann unbeabsichtigte Änderungen
     verursachen. Sind Sie sicher?'
@@ -4294,6 +4313,8 @@ translations:
   '{} presets': '{} Voreinstellungen'
   '{} prints': '{} Drucke'
   '{} queued': '{} in der Warteschlange'
+  '{} reads {}, but Spoolman spool #{} is {}. Update the spool in Spoolman to match the tag?': '{} liest {}, aber Spoolman-Spule #{} ist {}. Spule in Spoolman an das Tag anpassen?'
+  '{} reads {}. Choose the matching Spoolman spool?': '{} liest {}. Passende Spoolman-Spule auswählen?'
   '{} serial': '{} Seriennummer'
   '{} set to {}': '{} auf {} gesetzt'
   '{} set to {} {}': '{} auf {} {} gesetzt'
@@ -4310,4 +4331,6 @@ translations:
   '{} — response timed out': '{} – Antwort-Zeitüberschreitung'
   '{} → {}: no filament loaded.': '{} → {}: kein Filament geladen.'
   '{}% left': '{}% übrig'
+  '{}: no tag read': '{}: kein Tag gelesen'
+  '{}: tag read': '{}: Tag gelesen'
   '{}:{:02} elapsed': '{}:{:02} vergangen'

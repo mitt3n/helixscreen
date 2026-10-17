@@ -134,11 +134,19 @@
                      style_flex_main_place="start" hidden="true">
             <event_cb trigger="clicked" callback="ams_context_spoolman_cb"/>
           </ui_button>
-          <!-- Scan QR Code Button (hidden by default, shown when Spoolman enabled) -->
+          <!-- The one scan button the Spool Scan Button setting picks
+               (ams_scan_button: 1 = QR code, 2 = the system's tag reader). -->
           <ui_button name="btn_scan_qr"
                      height="#button_height_sm" icon="qrcode_scan" text="Scan QR Code" variant="ghost" clickable="true"
-                     style_flex_main_place="start" hidden="true">
+                     style_flex_main_place="start">
+            <bind_flag_if_not_eq subject="ams_scan_button" flag="hidden" ref_value="1"/>
             <event_cb trigger="clicked" callback="ams_context_scan_qr_cb"/>
+          </ui_button>
+          <ui_button name="btn_scan_rfid"
+                     height="#button_height_sm" icon="magnify_scan" text="Scan RFID" variant="ghost" clickable="true"
+                     style_flex_main_place="start">
+            <bind_flag_if_not_eq subject="ams_scan_button" flag="hidden" ref_value="2"/>
+            <event_cb trigger="clicked" callback="ams_context_scan_rfid_cb"/>
           </ui_button>
           <!-- Spool Info Button — always opens edit modal -->
           <ui_button name="btn_edit"

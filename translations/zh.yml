@@ -610,6 +610,7 @@ translations:
   Choose Filament: 选择耗材
   Choose Layer: '选择层'
   Choose Model: 选择型号
+  Choose Spool: '选择料盘'
   Choose an existing filament, or tap + New to create one.: 选择已有耗材，或点击 + 新建来创建。
   Choose display language: 选择显示语言
   Choose head: 选择打印头
@@ -1695,6 +1696,7 @@ translations:
   K so far: '当前 K 值'
   KEYBOARD LAYOUT: 键盘布局
   KLICKY CONTROLS: KLICKY 控制
+  Keep: '保留'
   Keep Navigation Bar: 保留导航栏
   Keep Printing: 继续打印
   Keep Spool Info on Eject: 弹出时保留料盘信息
@@ -1793,6 +1795,7 @@ translations:
   Line {} calls {}, which this printer treats as an emergency stop. Re-slice the file with a profile made for this printer.: '第 {} 行调用 {}，此打印机将其视为紧急停止。请使用为此打印机制作的配置重新切片该文件。'
   Linear rails: '直线导轨'
   Linear rails interval: '直线导轨间隔'
+  Link to Spoolman?: '关联到 Spoolman?'
   Listen to all theme sounds: 试听所有主题声音
   Live Z-offset, with baby steps and Save: 实时 Z 偏移，支持微调与保存
   Live view from your webcam: 摄像头实时画面
@@ -2128,6 +2131,7 @@ translations:
   No spools match your search: 没有符合搜索条件的料盘
   No spools placed: 未放置料盘
 
+  No tag read: '未读取到标签'
   No tape detected in printer: 打印机中未检测到标签带
   No target printer configured: 未配置目标打印机
   No temperature sensors detected: '未检测到温度传感器'
@@ -2216,6 +2220,7 @@ translations:
   Objects: 对象
   Objects in the print, with a tap to open the skip map: '打印中的对象，点按打开跳过地图'
   'Off': 关
+  Off, QR code, or the spool's RFID tag where this system reads tags: '关闭、QR 码,或在本系统可读取标签时使用料盘的 RFID 标签'
   'Off:': '关:'
   'Off: runs with these values without asking': '关: 不询问,直接以这些值运行'
   Offer to save Z-offset changes to the printer config: '提供将 Z 偏移更改保存到打印机配置的选项'
@@ -2580,6 +2585,7 @@ translations:
   'QGL failed: {}': 'QGL 失败: {}'
   QGL may still be running — response timed out: QGL 可能仍在运行 — 响应超时
   QGL timed out: QGL 超时
+  QR Code: 'QR 码'
   QR Only: 仅 QR 码
   QUEUED EVENTS: 排队事件
   QUICK BUTTONS: 快捷按钮
@@ -2602,6 +2608,7 @@ translations:
   RAM: RAM
   RFCOMM connect failed: RFCOMM 连接失败
   'RFCOMM connect failed: ': 'RFCOMM 连接失败: '
+  RFID: 'RFID'
   RFID reader malfunction (left): RFID 读取器故障（左）
   RFID reader malfunction (right): RFID 读取器故障（右）
   RFID, auto-refill, nozzle and link care: RFID、自动续料、喷嘴与链路维护
@@ -2623,6 +2630,7 @@ translations:
   Re-syncs Happy Hare's tracked state with the hardware.: 将 Happy Hare 跟踪的状态与硬件重新同步。
   Re-test A: 重新测试 A
   Re-test B: 重新测试 B
+  Reading the tag in {}…: '正在读取 {} 的标签…'
   Readings from extra temperature sensors: 额外温度传感器的读数
   Ready: 就绪
   Ready for filament operations: 可进行耗材操作
@@ -2889,6 +2897,7 @@ translations:
   Scan: 扫描
   Scan Cal: 扫描校准
   Scan QR Code: 扫描 QR 码
+  Scan RFID: '扫描 RFID'
   Scan Spool QR Code: 扫描料盘 QR 码
   Scan and select a Bluetooth printer first: 请先扫描并选择蓝牙打印机
   Scan for Printers: 扫描打印机
@@ -3096,6 +3105,7 @@ translations:
   'Spool #{}': '线轴 #{}'
   Spool Info: 料盘信息
   Spool Not Found: '找不到料盘'
+  Spool Scan Button: '料盘扫描按钮'
   Spool Weight (g): 料盘重量（克）
   Spool archived: 料盘已归档
   Spool created successfully: 料盘创建成功
@@ -3117,6 +3127,7 @@ translations:
   Spoolman needs a color for this filament.: Spoolman 需要该耗材的颜色。
   Spoolman needs a material for this filament.: Spoolman 需要该耗材的材料。
   Spoolman removed.: Spoolman 已移除。
+  'Spoolman spool #{} updated from the tag': '已根据标签更新 Spoolman 料盘 #{}'
   Spoolman unavailable — filament weights may be stale: Spoolman不可用 — 耗材重量可能已过期
   Spoolman was not configured.: Spoolman 未配置。
   'Spoolman: %zu Spool': 'Spoolman: %zu 个线轴'
@@ -3239,7 +3250,10 @@ translations:
   'TOGGLE: {}': '切换: {}'
   TOOLS: 工具
   TPU: TPU
+  Tag Doesn't Match Spoolman: '标签与 Spoolman 不匹配'
   Tag Parts: 标记部件
+  Tag read failed: '标签读取失败'
+  'Tag read: review and Save': '已读取标签:请检查并保存'
   Takes 3-5 min. Do not interrupt.: 需要 3-5 分钟。请勿中断。
   Tangle prevention active: 防打结已启用
   Tangle prevention boosted: 防打结已增强
@@ -3393,6 +3407,8 @@ translations:
   The runout sensor indicates no filament is loaded. Start print anyway?: 断料传感器显示未装载耗材。仍要开始打印吗？
   The sensor in this CFS unit cannot be read. Check its connection, or the unit may need service: 无法读取此 CFS 单元的传感器。请检查其连接，否则该单元可能需要维修
   The speed of one fan you choose: 所选风扇的转速
+  The tag lacks a brand, material or colour Spoolman needs: '标签缺少 Spoolman 所需的品牌、材料或颜色'
+  The tag matches this spool: '标签与此料盘匹配'
   The time, date, and system uptime: 时间、日期和系统运行时长
   The toolhead has filament but no AMS slot reports it loaded. Pull it out manually before printing. Start anyway?: 工具头内有耗材，但没有 AMS 槽位报告已装载。请在打印前手动取出耗材。仍要开始打印吗？
   ? The toolhead has filament but no AMS slot reports it loaded. The printer may refuse to load a slot until it is cleared. Start anyway?
@@ -3667,6 +3683,7 @@ translations:
   Update Failed: 更新失败
   Update Helper Macros: '更新帮助宏'
   Update Helper Macros?: '更新帮助宏？'
+  Update Spoolman: '更新 Spoolman'
   Update Success: 更新成功
   Update from a Terminal: 通过终端更新
   Update installed!: 更新已安装！
@@ -3919,6 +3936,7 @@ translations:
   never sleeps: 从不休眠
   not detected: 未检测到
   not loaded: '未加载'
+  nothing: '无'
   nozzle: 喷嘴
   of: 的
   'off': 关闭
@@ -4000,6 +4018,7 @@ translations:
   '{} kept crashing the panel; pick a printer to connect': '{} 反复导致屏幕崩溃，请选择要连接的打印机'
   '{} m': '{} 米'
   '{} macro not configured': '{} 宏未配置'
+  '{} matches Spoolman spool #{}': '{} 与 Spoolman 料盘 #{} 匹配'
   '{} matches.': '{} 匹配。'
   '{} may cause unintended changes. Are you sure?': '{} 可能导致意外更改。确定吗？'
   '{} meter reset': '{}计数器已重置'
@@ -4015,6 +4034,8 @@ translations:
   '{} presets': '{} 个预设'
   '{} prints': '{} 次打印'
   '{} queued': '{} 个在队列中'
+  '{} reads {}, but Spoolman spool #{} is {}. Update the spool in Spoolman to match the tag?': '{} 读取到 {},但 Spoolman 料盘 #{} 为 {}。是否按标签更新 Spoolman 中的料盘?'
+  '{} reads {}. Choose the matching Spoolman spool?': '{} 读取到 {}。是否选择匹配的 Spoolman 料盘?'
   '{} serial': '{} 序列号'
   '{} set to {}': '{} 已设为 {}'
   '{} set to {} {}': '{} 已设为 {} {}'
@@ -4031,4 +4052,6 @@ translations:
   '{} — response timed out': '{} — 响应超时'
   '{} → {}: no filament loaded.': '{} → {}: 未加载耗材。'
   '{}% left': '剩余 {}%'
+  '{}: no tag read': '{}:未读取到标签'
+  '{}: tag read': '{}:已读取标签'
   '{}:{:02} elapsed': 已用时 {}:{:02}

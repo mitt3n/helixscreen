@@ -162,6 +162,9 @@ static constexpr settings::PersistedSetting SETTINGS[] = {
      1, "ams_keep_spool_info_on_eject"},
     {"ams_force_bypass_controls", "ams/force_bypass_controls", Scope::PerPrinter, true, 0, 0, 1,
      "ams_force_bypass_controls"},
+    // SpoolScanMethod: 0=Off, 1=Auto, 2=QR code, 3=RFID
+    {"ams_spool_scan_method", "ams/spool_scan_method", Scope::PerPrinter, false, 1, 0,
+     SPOOL_SCAN_METHOD_COUNT - 1, "ams_spool_scan_method"},
     // Filament systems that run their own cooldown (AFC) want ours off.
     {"filament_auto_cooldown", "filament/auto_cooldown", Scope::PerPrinter, true, 1, 0, 1,
      "filament_auto_cooldown"},

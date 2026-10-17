@@ -452,6 +452,7 @@ src/ui/ui_cfs_chute_calibration_overlay.cpp
 src/ui/ui_cfs_device_flows.cpp
 src/ui/ui_guided_device_flow.cpp
 src/ui/ui_ams_edit_overlay.cpp
+src/ui/ui_spool_scan.cpp
 src/ui/ui_ams_environment_overlay.cpp
 src/ui/ui_ams_zone_overview_overlay.cpp
 src/ui/ui_ams_lane_bar.cpp

@@ -166,6 +166,27 @@ class CfsTestAccess {
         }
     }
 
+    // Seed connected units whose bays carry slots, @p present[i] saying
+    // whether global bay i holds a spool. Units = ceil(present.size() / 4).
+    static void set_unit_bays(helix::printer::AmsBackendCfs& b, const std::vector<bool>& present) {
+        const int units = static_cast<int>((present.size() + 3) / 4);
+        set_connected_units(b, units);
+        std::lock_guard<std::mutex> lock(b.mutex_);
+        for (auto& unit : b.system_info_.units) {
+            for (int bay = 0; bay < 4; ++bay) {
+                const int global = unit.first_slot_global_index + bay;
+                SlotInfo slot;
+                slot.slot_index = bay;
+                slot.global_index = global;
+                slot.status = global < static_cast<int>(present.size()) && present[global]
+                                  ? SlotStatus::AVAILABLE
+                                  : SlotStatus::EMPTY;
+                unit.slots.push_back(slot);
+            }
+        }
+        b.system_info_.total_slots = units * 4;
+    }
+
     /// Call the REAL dispatch_action_script implementation directly. The
     /// caller does not subclass AmsBackendCfs to reach this -- the virtual
     /// stays private, and this friend shim is the one sanctioned way in.

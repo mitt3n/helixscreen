@@ -601,6 +601,7 @@
   <translation tag="Choose Filament" zh="选择耗材"/>
   <translation tag="Choose Layer" zh="选择层"/>
   <translation tag="Choose Model" zh="选择型号"/>
+  <translation tag="Choose Spool" zh="选择料盘"/>
   <translation tag="Choose an existing filament, or tap + New to create one." zh="选择已有耗材，或点击 + 新建来创建。"/>
   <translation tag="Choose display language" zh="选择显示语言"/>
   <translation tag="Choose head" zh="选择打印头"/>
@@ -1638,6 +1639,7 @@
   <translation tag="K so far" zh="当前 K 值"/>
   <translation tag="KEYBOARD LAYOUT" zh="键盘布局"/>
   <translation tag="KLICKY CONTROLS" zh="KLICKY 控制"/>
+  <translation tag="Keep" zh="保留"/>
   <translation tag="Keep Navigation Bar" zh="保留导航栏"/>
   <translation tag="Keep Printing" zh="继续打印"/>
   <translation tag="Keep Spool Info on Eject" zh="弹出时保留料盘信息"/>
@@ -1728,6 +1730,7 @@
   <translation tag="Line {} calls {}, which this printer treats as an emergency stop. Re-slice the file with a profile made for this printer." zh="第 {} 行调用 {}，此打印机将其视为紧急停止。请使用为此打印机制作的配置重新切片该文件。"/>
   <translation tag="Linear rails" zh="直线导轨"/>
   <translation tag="Linear rails interval" zh="直线导轨间隔"/>
+  <translation tag="Link to Spoolman?" zh="关联到 Spoolman?"/>
   <translation tag="Listen to all theme sounds" zh="试听所有主题声音"/>
   <translation tag="Live Z-offset, with baby steps and Save" zh="实时 Z 偏移，支持微调与保存"/>
   <translation tag="Live view from your webcam" zh="摄像头实时画面"/>
@@ -2056,6 +2059,7 @@
   <translation tag="No spools found — tap to retry" zh="未找到料盘 - 点击重试"/>
   <translation tag="No spools match your search" zh="没有符合搜索条件的料盘"/>
   <translation tag="No spools placed" zh="未放置料盘"/>
+  <translation tag="No tag read" zh="未读取到标签"/>
   <translation tag="No tape detected in printer" zh="打印机中未检测到标签带"/>
   <translation tag="No target printer configured" zh="未配置目标打印机"/>
   <translation tag="No temperature sensors detected" zh="未检测到温度传感器"/>
@@ -2140,6 +2144,7 @@
   <translation tag="Objects" zh="对象"/>
   <translation tag="Objects in the print, with a tap to open the skip map" zh="打印中的对象，点按打开跳过地图"/>
   <translation tag="Off" zh="关"/>
+  <translation tag="Off, QR code, or the spool&apos;s RFID tag where this system reads tags" zh="关闭、QR 码,或在本系统可读取标签时使用料盘的 RFID 标签"/>
   <translation tag="Off:" zh="关:"/>
   <translation tag="Off: runs with these values without asking" zh="关: 不询问,直接以这些值运行"/>
   <translation tag="Offer to save Z-offset changes to the printer config" zh="提供将 Z 偏移更改保存到打印机配置的选项"/>
@@ -2493,6 +2498,7 @@
   <translation tag="QGL failed: {}" zh="QGL 失败: {}"/>
   <translation tag="QGL may still be running — response timed out" zh="QGL 可能仍在运行 — 响应超时"/>
   <translation tag="QGL timed out" zh="QGL 超时"/>
+  <translation tag="QR Code" zh="QR 码"/>
   <translation tag="QR Only" zh="仅 QR 码"/>
   <translation tag="QUEUED EVENTS" zh="排队事件"/>
   <translation tag="QUICK BUTTONS" zh="快捷按钮"/>
@@ -2515,6 +2521,7 @@
   <translation tag="RAM" zh="RAM"/>
   <translation tag="RFCOMM connect failed" zh="RFCOMM 连接失败"/>
   <translation tag="RFCOMM connect failed: " zh="RFCOMM 连接失败: "/>
+  <translation tag="RFID" zh="RFID"/>
   <translation tag="RFID reader malfunction (left)" zh="RFID 读取器故障（左）"/>
   <translation tag="RFID reader malfunction (right)" zh="RFID 读取器故障（右）"/>
   <translation tag="RFID, auto-refill, nozzle and link care" zh="RFID、自动续料、喷嘴与链路维护"/>
@@ -2536,6 +2543,7 @@
   <translation tag="Re-syncs Happy Hare&apos;s tracked state with the hardware." zh="将 Happy Hare 跟踪的状态与硬件重新同步。"/>
   <translation tag="Re-test A" zh="重新测试 A"/>
   <translation tag="Re-test B" zh="重新测试 B"/>
+  <translation tag="Reading the tag in {}…" zh="正在读取 {} 的标签…"/>
   <translation tag="Readings from extra temperature sensors" zh="额外温度传感器的读数"/>
   <translation tag="Ready" zh="就绪"/>
   <translation tag="Ready for filament operations" zh="可进行耗材操作"/>
@@ -2789,6 +2797,7 @@
   <translation tag="Scan" zh="扫描"/>
   <translation tag="Scan Cal" zh="扫描校准"/>
   <translation tag="Scan QR Code" zh="扫描 QR 码"/>
+  <translation tag="Scan RFID" zh="扫描 RFID"/>
   <translation tag="Scan Spool QR Code" zh="扫描料盘 QR 码"/>
   <translation tag="Scan and select a Bluetooth printer first" zh="请先扫描并选择蓝牙打印机"/>
   <translation tag="Scan for Printers" zh="扫描打印机"/>
@@ -2988,6 +2997,7 @@
   <translation tag="Spool #{}" zh="线轴 #{}"/>
   <translation tag="Spool Info" zh="料盘信息"/>
   <translation tag="Spool Not Found" zh="找不到料盘"/>
+  <translation tag="Spool Scan Button" zh="料盘扫描按钮"/>
   <translation tag="Spool Weight (g)" zh="料盘重量（克）"/>
   <translation tag="Spool archived" zh="料盘已归档"/>
   <translation tag="Spool created successfully" zh="料盘创建成功"/>
@@ -3009,6 +3019,7 @@
   <translation tag="Spoolman needs a color for this filament." zh="Spoolman 需要该耗材的颜色。"/>
   <translation tag="Spoolman needs a material for this filament." zh="Spoolman 需要该耗材的材料。"/>
   <translation tag="Spoolman removed." zh="Spoolman 已移除。"/>
+  <translation tag="Spoolman spool #{} updated from the tag" zh="已根据标签更新 Spoolman 料盘 #{}"/>
   <translation tag="Spoolman unavailable — filament weights may be stale" zh="Spoolman不可用 — 耗材重量可能已过期"/>
   <translation tag="Spoolman was not configured." zh="Spoolman 未配置。"/>
   <translation tag="Spoolman: %zu Spool" zh="Spoolman: %zu 个线轴"/>
@@ -3123,7 +3134,10 @@
   <translation tag="TOGGLE: {}" zh="切换: {}"/>
   <translation tag="TOOLS" zh="工具"/>
   <translation tag="TPU" zh="TPU"/>
+  <translation tag="Tag Doesn&apos;t Match Spoolman" zh="标签与 Spoolman 不匹配"/>
   <translation tag="Tag Parts" zh="标记部件"/>
+  <translation tag="Tag read failed" zh="标签读取失败"/>
+  <translation tag="Tag read: review and Save" zh="已读取标签:请检查并保存"/>
   <translation tag="Takes 3-5 min. Do not interrupt." zh="需要 3-5 分钟。请勿中断。"/>
   <translation tag="Tangle prevention active" zh="防打结已启用"/>
   <translation tag="Tangle prevention boosted" zh="防打结已增强"/>
@@ -3257,6 +3271,8 @@
   <translation tag="The runout sensor indicates no filament is loaded. Start print anyway?" zh="断料传感器显示未装载耗材。仍要开始打印吗？"/>
   <translation tag="The sensor in this CFS unit cannot be read. Check its connection, or the unit may need service" zh="无法读取此 CFS 单元的传感器。请检查其连接，否则该单元可能需要维修"/>
   <translation tag="The speed of one fan you choose" zh="所选风扇的转速"/>
+  <translation tag="The tag lacks a brand, material or colour Spoolman needs" zh="标签缺少 Spoolman 所需的品牌、材料或颜色"/>
+  <translation tag="The tag matches this spool" zh="标签与此料盘匹配"/>
   <translation tag="The time, date, and system uptime" zh="时间、日期和系统运行时长"/>
   <translation tag="The toolhead has filament but no AMS slot reports it loaded. Pull it out manually before printing. Start anyway?" zh="工具头内有耗材，但没有 AMS 槽位报告已装载。请在打印前手动取出耗材。仍要开始打印吗？"/>
   <translation tag="The toolhead has filament but no AMS slot reports it loaded. The printer may refuse to load a slot until it is cleared. Start anyway?" zh="工具头内有耗材，但没有 AMS 槽位报告已装载。在清空之前，打印机可能拒绝装载槽位。仍要开始打印吗？"/>
@@ -3510,6 +3526,7 @@
   <translation tag="Update Failed" zh="更新失败"/>
   <translation tag="Update Helper Macros" zh="更新帮助宏"/>
   <translation tag="Update Helper Macros?" zh="更新帮助宏？"/>
+  <translation tag="Update Spoolman" zh="更新 Spoolman"/>
   <translation tag="Update Success" zh="更新成功"/>
   <translation tag="Update from a Terminal" zh="通过终端更新"/>
   <translation tag="Update installed!" zh="更新已安装！"/>
@@ -3758,6 +3775,7 @@
   <translation tag="never sleeps" zh="从不休眠"/>
   <translation tag="not detected" zh="未检测到"/>
   <translation tag="not loaded" zh="未加载"/>
+  <translation tag="nothing" zh="无"/>
   <translation tag="nozzle" zh="喷嘴"/>
   <translation tag="of" zh="的"/>
   <translation tag="off" zh="关闭"/>
@@ -3834,6 +3852,7 @@
   <translation tag="{} lines in helixscreen.env were ignored" zh="helixscreen.env 中有 {} 行被忽略"/>
   <translation tag="{} m" zh="{} 米"/>
   <translation tag="{} macro not configured" zh="{} 宏未配置"/>
+  <translation tag="{} matches Spoolman spool #{}" zh="{} 与 Spoolman 料盘 #{} 匹配"/>
   <translation tag="{} matches." zh="{} 匹配。"/>
   <translation tag="{} may cause unintended changes. Are you sure?" zh="{} 可能导致意外更改。确定吗？"/>
   <translation tag="{} meter reset" zh="{}计数器已重置"/>
@@ -3849,6 +3868,8 @@
   <translation tag="{} presets" zh="{} 个预设"/>
   <translation tag="{} prints" zh="{} 次打印"/>
   <translation tag="{} queued" zh="{} 个在队列中"/>
+  <translation tag="{} reads {}, but Spoolman spool #{} is {}. Update the spool in Spoolman to match the tag?" zh="{} 读取到 {},但 Spoolman 料盘 #{} 为 {}。是否按标签更新 Spoolman 中的料盘?"/>
+  <translation tag="{} reads {}. Choose the matching Spoolman spool?" zh="{} 读取到 {}。是否选择匹配的 Spoolman 料盘?"/>
   <translation tag="{} serial" zh="{} 序列号"/>
   <translation tag="{} set to {}" zh="{} 已设为 {}"/>
   <translation tag="{} set to {} {}" zh="{} 已设为 {} {}"/>
@@ -3864,5 +3885,7 @@
   <translation tag="{} — response timed out" zh="{} — 响应超时"/>
   <translation tag="{} → {}: no filament loaded." zh="{} → {}: 未加载耗材。"/>
   <translation tag="{}% left" zh="剩余 {}%"/>
+  <translation tag="{}: no tag read" zh="{}:未读取到标签"/>
+  <translation tag="{}: tag read" zh="{}:已读取标签"/>
   <translation tag="{}:{:02} elapsed" zh="已用时 {}:{:02}"/>
 </translations>

@@ -705,6 +705,7 @@ translations:
   Choose Filament: Выбрать филамент
   Choose Layer: 'Выбрать слой'
   Choose Model: Выберите модель
+  Choose Spool: 'Выбрать катушку'
   Choose an existing filament, or tap + New to create one.: Выберите существующий
     филамент или нажмите + Новый, чтобы создать.
   Choose display language: Выберите язык интерфейса
@@ -1854,6 +1855,7 @@ translations:
   K so far: 'Текущее K'
   KEYBOARD LAYOUT: РАСКЛАДКА КЛАВИАТУРЫ
   KLICKY CONTROLS: УПРАВЛЕНИЕ KLICKY
+  Keep: 'Оставить'
   Keep Navigation Bar: Сохранить панель навигации
   Keep Printing: Продолжить печать
   Keep Spool Info on Eject: Сохранять данные катушки при извлечении
@@ -1961,6 +1963,7 @@ translations:
   Line {} calls {}, which this printer treats as an emergency stop. Re-slice the file with a profile made for this printer.: 'Строка {} вызывает {}, что этот принтер считает аварийной остановкой. Нарежьте файл заново с профилем для этого принтера.'
   Linear rails: 'Линейные направляющие'
   Linear rails interval: 'Интервал линейных направляющих'
+  Link to Spoolman?: 'Связать со Spoolman?'
   Listen to all theme sounds: Прослушать все звуки темы
   Live Z-offset, with baby steps and Save: Z-смещение в реальном времени, с подстройкой и сохранением
   Live view from your webcam: Прямая трансляция с веб-камеры
@@ -2311,6 +2314,7 @@ translations:
   No spools match your search: По вашему запросу катушки не найдены
   No spools placed: Катушки не положены
 
+  No tag read: 'Метка не считана'
   No tape detected in printer: В принтере не обнаружена лента
   No target printer configured: Целевой принтер не настроен
   No temperature sensors detected: 'Датчики температуры не обнаружены'
@@ -2399,6 +2403,7 @@ translations:
   Objects: Объекты
   Objects in the print, with a tap to open the skip map: 'Объекты печати, касание открывает карту пропуска'
   'Off': Выкл
+  Off, QR code, or the spool's RFID tag where this system reads tags: 'Выкл., QR-код или RFID-метка катушки, если система читает метки'
   'Off:': 'Выкл:'
   'Off: runs with these values without asking': 'Выкл.: запуск с этими значениями без запроса'
   Offer to save Z-offset changes to the printer config: 'Предлагать сохранить изменения Z-Offset в конфигурации принтера'
@@ -2792,6 +2797,7 @@ translations:
   QGL may still be running — response timed out: QGL может ещё выполняться — время
     ожидания истекло
   QGL timed out: QGL — время ожидания истекло
+  QR Code: 'QR-код'
   QR Only: Только QR
   QUEUED EVENTS: ОЧЕРЕДЬ СОБЫТИЙ
   QUICK BUTTONS: БЫСТРЫЕ КНОПКИ
@@ -2814,6 +2820,7 @@ translations:
   RAM: RAM
   RFCOMM connect failed: Не удалось подключиться по RFCOMM
   'RFCOMM connect failed: ': 'Не удалось подключиться по RFCOMM: '
+  RFID: 'RFID'
   RFID reader malfunction (left): Неисправность RFID-считывателя (левый)
   RFID reader malfunction (right): Неисправность RFID-считывателя (правый)
   RFID, auto-refill, nozzle and link care: RFID, автопополнение, уход за соплом и связью
@@ -2836,6 +2843,7 @@ translations:
     отслеживаемое состояние Happy Hare с оборудованием.
   Re-test A: Повторный тест A
   Re-test B: Повторный тест B
+  Reading the tag in {}…: 'Чтение метки в {}…'
   Readings from extra temperature sensors: Показания доп. датчиков температуры
   Ready: Готов
   Ready for filament operations: Готово к операциям с филаментом
@@ -3118,6 +3126,7 @@ translations:
   Scan: Поиск
   Scan Cal: Кал. скана
   Scan QR Code: Сканировать QR-код
+  Scan RFID: 'Сканировать RFID'
   Scan Spool QR Code: Сканировать QR-код катушки
   Scan and select a Bluetooth printer first: Сначала найдите и выберите Bluetooth-принтер
   Scan for Printers: Поиск принтеров
@@ -3346,6 +3355,7 @@ translations:
   'Spool #{}': 'Катушка #{}'
   Spool Info: Информация о катушке
   Spool Not Found: 'Катушка не найдена'
+  Spool Scan Button: 'Кнопка сканирования катушки'
   Spool Weight (g): Вес катушки (г)
   Spool archived: Катушка архивирована
   Spool created successfully: Катушка успешно создана
@@ -3367,6 +3377,7 @@ translations:
   Spoolman needs a color for this filament.: Spoolman требует цвет для этого филамента.
   Spoolman needs a material for this filament.: Spoolman требует материал для этого филамента.
   Spoolman removed.: Spoolman удалён.
+  'Spoolman spool #{} updated from the tag': 'Катушка Spoolman №{} обновлена по метке'
   Spoolman unavailable — filament weights may be stale: Spoolman недоступен — вес
     филамента может быть устаревшим
   Spoolman was not configured.: Spoolman не был настроен.
@@ -3503,7 +3514,10 @@ translations:
   'TOGGLE: {}': 'ПЕРЕКЛЮЧИТЬ: {}'
   TOOLS: ИНСТРУМЕНТЫ
   TPU: TPU
+  Tag Doesn't Match Spoolman: 'Метка не совпадает со Spoolman'
   Tag Parts: Отметить узлы
+  Tag read failed: 'Не удалось прочитать метку'
+  'Tag read: review and Save': 'Метка считана: проверьте и сохраните'
   Takes 3-5 min. Do not interrupt.: Занимает 3-5 мин. Не прерывайте.
   Tangle prevention active: Защита от спутывания активна
   Tangle prevention boosted: Защита от спутывания усилена
@@ -3666,6 +3680,8 @@ translations:
     филамента показывает, что филамент не загружен. Всё равно начать печать?
   The sensor in this CFS unit cannot be read. Check its connection, or the unit may need service: Не удаётся считать датчик этого блока CFS. Проверьте подключение, иначе блоку требуется обслуживание
   The speed of one fan you choose: Скорость выбранного вентилятора
+  The tag lacks a brand, material or colour Spoolman needs: 'В метке нет бренда, материала или цвета, нужных Spoolman'
+  The tag matches this spool: 'Метка совпадает с этой катушкой'
   The time, date, and system uptime: Время, дата и время работы системы
   The toolhead has filament but no AMS slot reports it loaded. Pull it out manually before printing. Start anyway?: В печатающей головке есть филамент, но ни один слот AMS не сообщает о его загрузке. Извлеките его вручную перед печатью. Всё равно начать?
   ? The toolhead has filament but no AMS slot reports it loaded. The printer may refuse to load a slot until it is cleared. Start anyway?
@@ -3961,6 +3977,7 @@ translations:
   Update Failed: Ошибка обновления
   Update Helper Macros: 'Обновить вспомогательные макросы'
   Update Helper Macros?: 'Обновить вспомогательные макросы?'
+  Update Spoolman: 'Обновить Spoolman'
   Update Success: Обновление успешно
   Update from a Terminal: Обновление через терминал
   Update installed!: Обновление установлено!
@@ -4228,6 +4245,7 @@ translations:
   never sleeps: никогда не спит
   not detected: не обнаружено
   not loaded: 'не загружен'
+  nothing: 'ничего'
   nozzle: сопло
   of: из
   'off': выкл
@@ -4317,6 +4335,7 @@ translations:
   '{} kept crashing the panel; pick a printer to connect': '{} постоянно вызывал сбой экрана; выберите принтер для подключения'
   '{} m': '{} м'
   '{} macro not configured': Макрос {} не настроен
+  '{} matches Spoolman spool #{}': '{} совпадает с катушкой Spoolman №{}'
   '{} matches.': '{} подходит.'
   '{} may cause unintended changes. Are you sure?': '{} может привести к непреднамеренным
     изменениям. Вы уверены?'
@@ -4345,6 +4364,8 @@ translations:
     many: '{} печатей'
     other: '{} печати'
   '{} queued': 'В очереди: {}'
+  '{} reads {}, but Spoolman spool #{} is {}. Update the spool in Spoolman to match the tag?': '{} читает {}, но катушка Spoolman №{} — это {}. Обновить катушку в Spoolman по метке?'
+  '{} reads {}. Choose the matching Spoolman spool?': '{} читает {}. Выбрать подходящую катушку Spoolman?'
   '{} serial': 'Серийный номер {}'
   '{} set to {}': '{} установлено на {}'
   '{} set to {} {}': '{} установлено на {} {}'
@@ -4365,4 +4386,6 @@ translations:
   '{} — response timed out': '{} — время ожидания ответа истекло'
   '{} → {}: no filament loaded.': '{} → {}: филамент не загружен.'
   '{}% left': 'Осталось {}%'
+  '{}: no tag read': '{}: метка не считана'
+  '{}: tag read': '{}: метка считана'
   '{}:{:02} elapsed': прошло {}:{:02}

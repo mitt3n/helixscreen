@@ -362,6 +362,8 @@ class AmsEditOverlay : public OverlayBase {
     void handle_print_label();
 #endif
     void handle_scan_qr();
+    /// Re-read the slot's tag and, when it disagrees, fill the form with it.
+    void handle_scan_tag();
     void handle_tool_changed(int index);
 };
 

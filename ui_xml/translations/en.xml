@@ -601,6 +601,7 @@
   <translation tag="Choose Filament" en="Choose Filament"/>
   <translation tag="Choose Layer" en="Choose Layer"/>
   <translation tag="Choose Model" en="Choose Model"/>
+  <translation tag="Choose Spool" en="Choose Spool"/>
   <translation tag="Choose an existing filament, or tap + New to create one." en="Choose an existing filament, or tap + New to create one."/>
   <translation tag="Choose display language" en="Choose display language"/>
   <translation tag="Choose head" en="Choose head"/>
@@ -1638,6 +1639,7 @@
   <translation tag="K so far" en="K so far"/>
   <translation tag="KEYBOARD LAYOUT" en="KEYBOARD LAYOUT"/>
   <translation tag="KLICKY CONTROLS" en="KLICKY CONTROLS"/>
+  <translation tag="Keep" en="Keep"/>
   <translation tag="Keep Navigation Bar" en="Keep Navigation Bar"/>
   <translation tag="Keep Printing" en="Keep Printing"/>
   <translation tag="Keep Spool Info on Eject" en="Keep Spool Info on Eject"/>
@@ -1728,6 +1730,7 @@
   <translation tag="Line {} calls {}, which this printer treats as an emergency stop. Re-slice the file with a profile made for this printer." en="Line {} calls {}, which this printer treats as an emergency stop. Re-slice the file with a profile made for this printer."/>
   <translation tag="Linear rails" en="Linear rails"/>
   <translation tag="Linear rails interval" en="Linear rails interval"/>
+  <translation tag="Link to Spoolman?" en="Link to Spoolman?"/>
   <translation tag="Listen to all theme sounds" en="Listen to all theme sounds"/>
   <translation tag="Live Z-offset, with baby steps and Save" en="Live Z-offset, with baby steps and Save"/>
   <translation tag="Live view from your webcam" en="Live view from your webcam"/>
@@ -2056,6 +2059,7 @@
   <translation tag="No spools found — tap to retry" en="No spools found — tap to retry"/>
   <translation tag="No spools match your search" en="No spools match your search"/>
   <translation tag="No spools placed" en="No spools placed"/>
+  <translation tag="No tag read" en="No tag read"/>
   <translation tag="No tape detected in printer" en="No tape detected in printer"/>
   <translation tag="No target printer configured" en="No target printer configured"/>
   <translation tag="No temperature sensors detected" en="No temperature sensors detected"/>
@@ -2140,6 +2144,7 @@
   <translation tag="Objects" en="Objects"/>
   <translation tag="Objects in the print, with a tap to open the skip map" en="Objects in the print, with a tap to open the skip map"/>
   <translation tag="Off" en="Off"/>
+  <translation tag="Off, QR code, or the spool&apos;s RFID tag where this system reads tags" en="Off, QR code, or the spool&apos;s RFID tag where this system reads tags"/>
   <translation tag="Off:" en="Off:"/>
   <translation tag="Off: runs with these values without asking" en="Off: runs with these values without asking"/>
   <translation tag="Offer to save Z-offset changes to the printer config" en="Offer to save Z-offset changes to the printer config"/>
@@ -2493,6 +2498,7 @@
   <translation tag="QGL failed: {}" en="QGL failed: {}"/>
   <translation tag="QGL may still be running — response timed out" en="QGL may still be running — response timed out"/>
   <translation tag="QGL timed out" en="QGL timed out"/>
+  <translation tag="QR Code" en="QR Code"/>
   <translation tag="QR Only" en="QR Only"/>
   <translation tag="QUEUED EVENTS" en="QUEUED EVENTS"/>
   <translation tag="QUICK BUTTONS" en="QUICK BUTTONS"/>
@@ -2515,6 +2521,7 @@
   <translation tag="RAM" en="RAM"/>
   <translation tag="RFCOMM connect failed" en="RFCOMM connect failed"/>
   <translation tag="RFCOMM connect failed: " en="RFCOMM connect failed: "/>
+  <translation tag="RFID" en="RFID"/>
   <translation tag="RFID reader malfunction (left)" en="RFID reader malfunction (left)"/>
   <translation tag="RFID reader malfunction (right)" en="RFID reader malfunction (right)"/>
   <translation tag="RFID, auto-refill, nozzle and link care" en="RFID, auto-refill, nozzle and link care"/>
@@ -2536,6 +2543,7 @@
   <translation tag="Re-syncs Happy Hare&apos;s tracked state with the hardware." en="Re-syncs Happy Hare&apos;s tracked state with the hardware."/>
   <translation tag="Re-test A" en="Re-test A"/>
   <translation tag="Re-test B" en="Re-test B"/>
+  <translation tag="Reading the tag in {}…" en="Reading the tag in {}…"/>
   <translation tag="Readings from extra temperature sensors" en="Readings from extra temperature sensors"/>
   <translation tag="Ready" en="Ready"/>
   <translation tag="Ready for filament operations" en="Ready for filament operations"/>
@@ -2789,6 +2797,7 @@
   <translation tag="Scan" en="Scan"/>
   <translation tag="Scan Cal" en="Scan Cal"/>
   <translation tag="Scan QR Code" en="Scan QR Code"/>
+  <translation tag="Scan RFID" en="Scan RFID"/>
   <translation tag="Scan Spool QR Code" en="Scan Spool QR Code"/>
   <translation tag="Scan and select a Bluetooth printer first" en="Scan and select a Bluetooth printer first"/>
   <translation tag="Scan for Printers" en="Scan for Printers"/>
@@ -2988,6 +2997,7 @@
   <translation tag="Spool #{}" en="Spool #{}"/>
   <translation tag="Spool Info" en="Spool Info"/>
   <translation tag="Spool Not Found" en="Spool Not Found"/>
+  <translation tag="Spool Scan Button" en="Spool Scan Button"/>
   <translation tag="Spool Weight (g)" en="Spool Weight (g)"/>
   <translation tag="Spool archived" en="Spool archived"/>
   <translation tag="Spool created successfully" en="Spool created successfully"/>
@@ -3009,6 +3019,7 @@
   <translation tag="Spoolman needs a color for this filament." en="Spoolman needs a color for this filament."/>
   <translation tag="Spoolman needs a material for this filament." en="Spoolman needs a material for this filament."/>
   <translation tag="Spoolman removed." en="Spoolman removed."/>
+  <translation tag="Spoolman spool #{} updated from the tag" en="Spoolman spool #{} updated from the tag"/>
   <translation tag="Spoolman unavailable — filament weights may be stale" en="Spoolman unavailable — filament weights may be stale"/>
   <translation tag="Spoolman was not configured." en="Spoolman was not configured."/>
   <translation tag="Spoolman: %zu Spool" en="Spoolman: %zu Spool"/>
@@ -3123,7 +3134,10 @@
   <translation tag="TOGGLE: {}" en="TOGGLE: {}"/>
   <translation tag="TOOLS" en="TOOLS"/>
   <translation tag="TPU" en="TPU"/>
+  <translation tag="Tag Doesn&apos;t Match Spoolman" en="Tag Doesn&apos;t Match Spoolman"/>
   <translation tag="Tag Parts" en="Tag Parts"/>
+  <translation tag="Tag read failed" en="Tag read failed"/>
+  <translation tag="Tag read: review and Save" en="Tag read: review and Save"/>
   <translation tag="Takes 3-5 min. Do not interrupt." en="Takes 3-5 min. Do not interrupt."/>
   <translation tag="Tangle prevention active" en="Tangle prevention active"/>
   <translation tag="Tangle prevention boosted" en="Tangle prevention boosted"/>
@@ -3257,6 +3271,8 @@
   <translation tag="The runout sensor indicates no filament is loaded. Start print anyway?" en="The runout sensor indicates no filament is loaded. Start print anyway?"/>
   <translation tag="The sensor in this CFS unit cannot be read. Check its connection, or the unit may need service" en="The sensor in this CFS unit cannot be read. Check its connection, or the unit may need service"/>
   <translation tag="The speed of one fan you choose" en="The speed of one fan you choose"/>
+  <translation tag="The tag lacks a brand, material or colour Spoolman needs" en="The tag lacks a brand, material or colour Spoolman needs"/>
+  <translation tag="The tag matches this spool" en="The tag matches this spool"/>
   <translation tag="The time, date, and system uptime" en="The time, date, and system uptime"/>
   <translation tag="The toolhead has filament but no AMS slot reports it loaded. Pull it out manually before printing. Start anyway?" en="The toolhead has filament but no AMS slot reports it loaded. Pull it out manually before printing. Start anyway?"/>
   <translation tag="The toolhead has filament but no AMS slot reports it loaded. The printer may refuse to load a slot until it is cleared. Start anyway?" en="The toolhead has filament but no AMS slot reports it loaded. The printer may refuse to load a slot until it is cleared. Start anyway?"/>
@@ -3510,6 +3526,7 @@
   <translation tag="Update Failed" en="Update Failed"/>
   <translation tag="Update Helper Macros" en="Update Helper Macros"/>
   <translation tag="Update Helper Macros?" en="Update Helper Macros?"/>
+  <translation tag="Update Spoolman" en="Update Spoolman"/>
   <translation tag="Update Success" en="Update Success"/>
   <translation tag="Update from a Terminal" en="Update from a Terminal"/>
   <translation tag="Update installed!" en="Update installed!"/>
@@ -3758,6 +3775,7 @@
   <translation tag="never sleeps" en="never sleeps"/>
   <translation tag="not detected" en="not detected"/>
   <translation tag="not loaded" en="not loaded"/>
+  <translation tag="nothing" en="nothing"/>
   <translation tag="nozzle" en="nozzle"/>
   <translation tag="of" en="of"/>
   <translation tag="off" en="off"/>
@@ -3834,6 +3852,7 @@
   <translation tag="{} lines in helixscreen.env were ignored" en="{} lines in helixscreen.env were ignored"/>
   <translation tag="{} m" en="{} m"/>
   <translation tag="{} macro not configured" en="{} macro not configured"/>
+  <translation tag="{} matches Spoolman spool #{}" en="{} matches Spoolman spool #{}"/>
   <translation tag="{} matches." en="{} matches."/>
   <translation tag="{} may cause unintended changes. Are you sure?" en="{} may cause unintended changes. Are you sure?"/>
   <translation tag="{} meter reset" en="{} meter reset"/>
@@ -3849,6 +3868,8 @@
   <translation tag="{} presets" en="{} presets"/>
   <translation tag="{} prints" en="{} prints"/>
   <translation tag="{} queued" en="{} queued"/>
+  <translation tag="{} reads {}, but Spoolman spool #{} is {}. Update the spool in Spoolman to match the tag?" en="{} reads {}, but Spoolman spool #{} is {}. Update the spool in Spoolman to match the tag?"/>
+  <translation tag="{} reads {}. Choose the matching Spoolman spool?" en="{} reads {}. Choose the matching Spoolman spool?"/>
   <translation tag="{} serial" en="{} serial"/>
   <translation tag="{} set to {}" en="{} set to {}"/>
   <translation tag="{} set to {} {}" en="{} set to {} {}"/>
@@ -3864,5 +3885,7 @@
   <translation tag="{} — response timed out" en="{} — response timed out"/>
   <translation tag="{} → {}: no filament loaded." en="{} → {}: no filament loaded."/>
   <translation tag="{}% left" en="{}% left"/>
+  <translation tag="{}: no tag read" en="{}: no tag read"/>
+  <translation tag="{}: tag read" en="{}: tag read"/>
   <translation tag="{}:{:02} elapsed" en="{}:{:02} elapsed"/>
 </translations>

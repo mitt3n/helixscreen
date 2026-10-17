@@ -2383,6 +2383,166 @@ AmsError AmsBackendCfs::reject_if_flat_schema(const char* operation) const {
     return AmsErrorHelper::not_supported(std::string(operation) + " on this firmware's CFS module");
 }
 
+// ============================================================================
+// Tag read (BOX_INFO_REFRESH)
+// ============================================================================
+
+std::string AmsBackendCfs::tag_refresh_gcode(int unit_addr, int bay_mask) {
+    return "BOX_INFO_REFRESH ADDR=" + std::to_string(unit_addr) +
+           " NUM=" + std::to_string(bay_mask);
+}
+
+bool AmsBackendCfs::supports_tag_read() const {
+    // The flat modules define their own command set and were never observed to
+    // expose the RFID read, which is why the insert probe skips them too.
+    return schema_ != CfsSchema::Flat;
+}
+
+AmsError AmsBackendCfs::tag_read_refusal() const {
+    if (!supports_tag_read()) {
+        return AmsErrorHelper::not_supported("RFID read on this firmware's CFS module");
+    }
+    if (auto err = check_preconditions(); !err.success()) {
+        return err;
+    }
+    // The read pre-loads the spool. A box mid-job answers it busy, raises
+    // key843 and pins the bay's remain_len at 255, so a paused job blocks it
+    // as much as a running one.
+    return refuse_if_printing(/*paused_blocks=*/true);
+}
+
+AmsError AmsBackendCfs::read_slot_tag(int slot_index, TagReadCallback on_done) {
+    if (auto err = tag_read_refusal(); !err.success()) {
+        return err;
+    }
+    const int unit_addr = slot_index / 4 + 1;
+    {
+        std::lock_guard<std::mutex> lock(mutex_);
+        const SlotInfo* slot = bay_locked(slot_index);
+        if (!slot) {
+            return AmsErrorHelper::invalid_slot(lane_noun(), slot_index,
+                                                system_info_.total_slots - 1);
+        }
+        for (const auto& unit : system_info_.units) {
+            if (unit.unit_index + 1 == unit_addr && (!unit.connected || unit.absent)) {
+                return AmsErrorHelper::not_connected(unit.name);
+            }
+        }
+        // An empty bay has no tag to read; pre-loading it only spins the feeder.
+        if (slot_status_reports_filament(slot->status) == false) {
+            return AmsErrorHelper::slot_not_available(lane_noun(), slot_index);
+        }
+    }
+    spdlog::info("{} Reading RFID tag of slot {}", backend_log_tag(), slot_index);
+    return dispatch_tag_refresh({{unit_addr, 1 << (slot_index % 4)}}, {slot_index},
+                                std::move(on_done));
+}
+
+AmsError AmsBackendCfs::read_all_tags(TagReadCallback on_done) {
+    if (auto err = tag_read_refusal(); !err.success()) {
+        return err;
+    }
+    std::map<int, int> bay_masks;
+    std::vector<int> slots;
+    {
+        std::lock_guard<std::mutex> lock(mutex_);
+        for (const auto& unit : system_info_.units) {
+            if (!unit.connected || unit.absent) {
+                continue;
+            }
+            bay_masks[unit.unit_index + 1] = 0b1111;
+            for (const auto& slot : unit.slots) {
+                slots.push_back(slot.global_index);
+            }
+        }
+    }
+    spdlog::info("{} Reading RFID tags of {} unit(s)", backend_log_tag(), bay_masks.size());
+    return dispatch_tag_refresh(bay_masks, std::move(slots), std::move(on_done));
+}
+
+AmsError AmsBackendCfs::dispatch_tag_refresh(const std::map<int, int>& bay_masks,
+                                             std::vector<int> slots, TagReadCallback on_done) {
+    if (bay_masks.empty()) {
+        return AmsErrorHelper::not_connected("No CFS unit to read");
+    }
+
+    // Each unit's refresh is its own command; the read is over when the last
+    // one has been answered, and the first failure is the one reported.
+    struct Pending {
+        std::mutex m;
+        size_t remaining = 0;
+        std::optional<AmsError> error;
+    };
+    auto pending = std::make_shared<Pending>();
+    pending->remaining = bay_masks.size();
+    auto token = lifetime_.token();
+
+    // Background thread. The box publishes the re-read values after the
+    // command returns, so they are queried rather than awaited on the
+    // subscription, which sends nothing for a bay whose reading is unchanged.
+    auto finish_one = [this, token, pending, slots, on_done](std::optional<AmsError> err) {
+        {
+            std::lock_guard<std::mutex> lock(pending->m);
+            if (err && !pending->error) {
+                pending->error = std::move(err);
+            }
+            if (--pending->remaining > 0) {
+                return;
+            }
+        }
+        token.defer("AmsBackendCfs::tag_read_done", [this, token, pending, slots, on_done]() {
+            if (pending->error || !client_) {
+                if (on_done) {
+                    on_done(pending->error.value_or(AmsErrorHelper::success()), slots);
+                }
+                return;
+            }
+            nlohmann::json params = {{"objects", {{"box", nullptr}}}};
+            client_->send_jsonrpc(
+                "printer.objects.query", params,
+                [this, token, slots, on_done](const nlohmann::json& response) {
+                    token.defer("AmsBackendCfs::tag_read_requery", [this, response, slots,
+                                                                    on_done]() {
+                        if (response.contains("result") && response["result"].contains("status") &&
+                            response["result"]["status"].is_object()) {
+                            handle_status(response["result"]["status"]);
+                        }
+                        if (on_done) {
+                            on_done(AmsErrorHelper::success(), slots);
+                        }
+                    });
+                },
+                [token, slots, on_done](const MoonrakerError& e) {
+                    spdlog::warn("[AMS CFS] Box re-query after RFID read failed: {}", e.message);
+                    // The read itself ran; the next status push carries its values.
+                    token.defer("AmsBackendCfs::tag_read_requery_failed", [slots, on_done]() {
+                        if (on_done) {
+                            on_done(AmsErrorHelper::success(), slots);
+                        }
+                    });
+                });
+        });
+    };
+
+    // execute_gcode() answers every send through exactly one of the two
+    // callbacks, a refused one included, so each unit is counted once.
+    for (const auto& [unit_addr, mask] : bay_masks) {
+        const std::string gcode = tag_refresh_gcode(unit_addr, mask);
+        execute_gcode(
+            gcode, [finish_one]() { finish_one(std::nullopt); },
+            [finish_one, gcode](const MoonrakerError& e) {
+                // A timed-out read may still be running; the re-query shows
+                // whatever it has produced so far.
+                if (e.type == MoonrakerErrorType::TIMEOUT) {
+                    finish_one(std::nullopt);
+                    return;
+                }
+                finish_one(AmsErrorHelper::command_failed(gcode, e.message));
+            });
+    }
+    return AmsErrorHelper::success();
+}
+
 AmsError AmsBackendCfs::do_load_filament(int slot_index) {
     auto err = reject_if_flat_schema("Load");
     if (err.result != AmsResult::SUCCESS)
@@ -4383,6 +4543,9 @@ std::vector<helix::printer::DeviceAction> AmsBackendCfs::get_device_actions() co
 
 AmsError AmsBackendCfs::execute_device_action(const std::string& action_id, const std::any& value) {
     if (action_id == "refresh_rfid") {
+        if (supports_tag_read()) {
+            return read_all_tags();
+        }
         // Probe every connected CFS unit's RFID tags. Inserting a spool does NOT
         // auto-read its tag: the box reports vender/color/material as sentinels
         // until BOX_INFO_REFRESH scans them (spool then shows as "unknown"/empty

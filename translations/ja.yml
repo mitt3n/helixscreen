@@ -611,6 +611,7 @@ translations:
   Choose Filament: フィラメントを選択
   Choose Layer: 'レイヤーを選択'
   Choose Model: モデルを選択
+  Choose Spool: 'スプールを選択'
   Choose an existing filament, or tap + New to create one.: 既存のフィラメントを選択するか、+ 新規をタップして作成してください。
   Choose display language: 表示言語を選択
   Choose head: ヘッドを選択
@@ -1700,6 +1701,7 @@ translations:
   K so far: '現在の K'
   KEYBOARD LAYOUT: キーボードレイアウト
   KLICKY CONTROLS: Klickyコントロール
+  Keep: 'そのまま'
   Keep Navigation Bar: ナビゲーションバーを維持
   Keep Printing: 印刷を続行
   Keep Spool Info on Eject: 取り出し時にスプール情報を保持
@@ -1799,6 +1801,7 @@ translations:
   Line {} calls {}, which this printer treats as an emergency stop. Re-slice the file with a profile made for this printer.: '{} 行目で {} を実行します。このプリンターでは緊急停止とみなされます。このプリンター用のプロファイルでファイルを再スライスしてください。'
   Linear rails: 'リニアレール'
   Linear rails interval: 'リニアレールの間隔'
+  Link to Spoolman?: 'Spoolman にリンクしますか?'
   Listen to all theme sounds: すべてのテーマサウンドを試聴
   Live Z-offset, with baby steps and Save: ライブ Z-Offset、微調整と保存つき
   Live view from your webcam: ウェブカメラのライブ表示
@@ -2135,6 +2138,7 @@ translations:
   No spools match your search: 検索に一致するスプールがありません
   No spools placed: スプールは置いていません
 
+  No tag read: 'タグを読み取れませんでした'
   No tape detected in printer: プリンターにテープが検出されません
   No target printer configured: 対象プリンターが設定されていません
   No temperature sensors detected: '温度センサーが検出されません'
@@ -2223,6 +2227,7 @@ translations:
   Objects: オブジェクト
   Objects in the print, with a tap to open the skip map: '印刷中のオブジェクト。タップでスキップマップを開きます'
   'Off': オフ
+  Off, QR code, or the spool's RFID tag where this system reads tags: 'オフ、QR コード、またはこのシステムがタグを読み取れる場合はスプールの RFID タグ'
   'Off:': 'オフ:'
   'Off: runs with these values without asking': 'オフ: これらの値で確認なしに実行'
   Offer to save Z-offset changes to the printer config: 'Z-Offset の変更をプリンター設定に保存する操作を表示します'
@@ -2589,6 +2594,7 @@ translations:
   'QGL failed: {}': 'QGL に失敗しました: {}'
   QGL may still be running — response timed out: QGL がまだ実行中の可能性があります — 応答タイムアウト
   QGL timed out: QGL がタイムアウトしました
+  QR Code: 'QR コード'
   QR Only: QRのみ
   QUEUED EVENTS: キュー内のイベント
   QUICK BUTTONS: クイックボタン
@@ -2611,6 +2617,7 @@ translations:
   RAM: RAM
   RFCOMM connect failed: RFCOMM 接続に失敗しました
   'RFCOMM connect failed: ': 'RFCOMM 接続に失敗しました: '
+  RFID: 'RFID'
   RFID reader malfunction (left): RFID リーダーの異常（左）
   RFID reader malfunction (right): RFID リーダーの異常（右）
   RFID, auto-refill, nozzle and link care: RFID、自動補充、ノズルと接続のメンテナンス
@@ -2632,6 +2639,7 @@ translations:
   Re-syncs Happy Hare's tracked state with the hardware.: Happy Hare が追跡している状態をハードウェアと再同期します。
   Re-test A: Aを再テスト
   Re-test B: Bを再テスト
+  Reading the tag in {}…: '{} のタグを読み取り中…'
   Readings from extra temperature sensors: 追加の温度センサーの値
   Ready: 準備完了
   Ready for filament operations: フィラメント操作の準備ができています
@@ -2898,6 +2906,7 @@ translations:
   Scan: スキャン
   Scan Cal: スキャンキャリブレーション
   Scan QR Code: QR コードをスキャン
+  Scan RFID: 'RFID をスキャン'
   Scan Spool QR Code: スプール QR コードをスキャン
   Scan and select a Bluetooth printer first: 先に Bluetooth プリンターをスキャンして選択してください
   Scan for Printers: プリンターをスキャン
@@ -3105,6 +3114,7 @@ translations:
   'Spool #{}': 'スプール #{}'
   Spool Info: スプール情報
   Spool Not Found: 'スプールが見つかりません'
+  Spool Scan Button: 'スプールスキャンボタン'
   Spool Weight (g): スプール重量（g）
   Spool archived: スプールをアーカイブしました
   Spool created successfully: スプールを作成しました
@@ -3126,6 +3136,7 @@ translations:
   Spoolman needs a color for this filament.: Spoolman にはこのフィラメントの色が必要です。
   Spoolman needs a material for this filament.: Spoolman にはこのフィラメントの素材が必要です。
   Spoolman removed.: Spoolman を削除しました。
+  'Spoolman spool #{} updated from the tag': 'タグから Spoolman スプール #{} を更新しました'
   Spoolman unavailable — filament weights may be stale: Spoolmanが利用できません — フィラメント重量が古い可能性があります
   Spoolman was not configured.: Spoolman は設定されていませんでした。
   'Spoolman: %zu Spool': 'Spoolman: %zu 個のスプール'
@@ -3247,7 +3258,10 @@ translations:
   'TOGGLE: {}': '切り替え: {}'
   TOOLS: ツール
   TPU: TPU
+  Tag Doesn't Match Spoolman: 'タグが Spoolman と一致しません'
   Tag Parts: 部位をタグ付け
+  Tag read failed: 'タグの読み取りに失敗しました'
+  'Tag read: review and Save': 'タグを読み取りました: 確認して保存してください'
   Takes 3-5 min. Do not interrupt.: 3〜5分かかります。中断しないでください。
   Tangle prevention active: 絡み防止 動作中
   Tangle prevention boosted: 絡み防止 強化中
@@ -3402,6 +3416,8 @@ translations:
   The runout sensor indicates no filament is loaded. Start print anyway?: フィラメント切れセンサーがフィラメント未装填を検出しました。それでも印刷を開始しますか？
   The sensor in this CFS unit cannot be read. Check its connection, or the unit may need service: この CFS ユニットのセンサーを読み取れません。接続を確認してください。改善しない場合は修理が必要です
   The speed of one fan you choose: 選んだファン1つの速度
+  The tag lacks a brand, material or colour Spoolman needs: 'タグに Spoolman が必要とするブランド、素材、または色がありません'
+  The tag matches this spool: 'タグはこのスプールと一致しています'
   The time, date, and system uptime: 時間、日付、稼働時間
   The toolhead has filament but no AMS slot reports it loaded. Pull it out manually before printing. Start anyway?: ツールヘッドにフィラメントがありますが、装填済みと報告しているAMSスロットはありません。印刷前に手動で引き抜いてください。それでも印刷を開始しますか？
   ? The toolhead has filament but no AMS slot reports it loaded. The printer may refuse to load a slot until it is cleared. Start anyway?
@@ -3676,6 +3692,7 @@ translations:
   Update Failed: 更新失敗
   Update Helper Macros: 'ヘルパーマクロを更新'
   Update Helper Macros?: 'ヘルパーマクロを更新しますか？'
+  Update Spoolman: 'Spoolman を更新'
   Update Success: 更新成功
   Update from a Terminal: ターミナルから更新
   Update installed!: アップデートをインストールしました！
@@ -3929,6 +3946,7 @@ translations:
   never sleeps: スリープしない
   not detected: 未検出
   not loaded: '未装填'
+  nothing: 'なし'
   nozzle: ノズル
   of: の
   'off': オフ
@@ -4010,6 +4028,7 @@ translations:
   '{} kept crashing the panel; pick a printer to connect': '{} で画面のクラッシュが繰り返されました。接続するプリンターを選んでください'
   '{} m': '{} m'
   '{} macro not configured': '{} マクロが未設定です'
+  '{} matches Spoolman spool #{}': '{} は Spoolman スプール #{} と一致しています'
   '{} matches.': '{} が一致します。'
   '{} may cause unintended changes. Are you sure?': '{} は意図しない変更を引き起こす可能性があります。よろしいですか？'
   '{} meter reset': '{}のメーターをリセットしました'
@@ -4025,6 +4044,8 @@ translations:
   '{} presets': '{} 個のプリセット'
   '{} prints': '{} 件'
   '{} queued': '{} 件キュー中'
+  '{} reads {}, but Spoolman spool #{} is {}. Update the spool in Spoolman to match the tag?': '{} のタグは {} ですが、Spoolman スプール #{} は {} です。タグに合わせて Spoolman のスプールを更新しますか?'
+  '{} reads {}. Choose the matching Spoolman spool?': '{} のタグは {} です。一致する Spoolman スプールを選択しますか?'
   '{} serial': '{} シリアル番号'
   '{} set to {}': '{} を {} に設定しました'
   '{} set to {} {}': '{} を {} {} に設定しました'
@@ -4041,4 +4062,6 @@ translations:
   '{} — response timed out': '{} — 応答タイムアウト'
   '{} → {}: no filament loaded.': '{} → {}: フィラメントが装填されていません。'
   '{}% left': '残り {}%'
+  '{}: no tag read': '{}: タグを読み取れませんでした'
+  '{}: tag read': '{}: タグを読み取りました'
   '{}:{:02} elapsed': 経過 {}:{:02}

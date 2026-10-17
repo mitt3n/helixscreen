@@ -10,6 +10,7 @@
 #include "ui_callback_helpers.h"
 #include "ui_error_reporting.h"
 #include "ui_overlay_qr_scanner.h"
+#include "ui_spool_scan.h"
 #include "ui_toast_manager.h"
 
 #include "ams_backend.h"
@@ -77,6 +78,7 @@ void AmsContextMenu::init_subjects() {
     lv_subject_init_string(&slot_clear_hint_subject_, slot_clear_hint_buf_, nullptr,
                            sizeof(slot_clear_hint_buf_), "");
     lv_subject_init_int(&slot_preload_subject_, 0);
+    init_scan_button_subject();
 
     lv_xml_register_subject(nullptr, "ams_slot_is_loaded", &slot_is_loaded_subject_);
     lv_xml_register_subject(nullptr, "ams_slot_can_load", &slot_can_load_subject_);
@@ -308,7 +310,7 @@ void AmsContextMenu::on_created(lv_obj_t* menu_obj) {
         lv_subject_copy_string(&slot_clear_hint_subject_, "");
         lv_subject_set_int(&slot_clear_hint_visible_subject_, 0);
 
-        // Show "Select Spool" and "Scan QR Code" if Spoolman is available
+        // Show "Select Spool" if Spoolman is available
         auto* spoolman_subj = lv_xml_get_subject(nullptr, "printer_has_spoolman");
         bool has_spoolman = spoolman_subj && lv_subject_get_int(spoolman_subj) == 1;
 
@@ -318,13 +320,8 @@ void AmsContextMenu::on_created(lv_obj_t* menu_obj) {
             lv_obj_clear_flag(btn_spoolman, LV_OBJ_FLAG_HIDDEN);
         }
 
-        lv_obj_t* btn_scan_qr = helix::ui::find_required(menu_obj, "btn_scan_qr", "AmsContextMenu");
-        if (btn_scan_qr && has_spoolman) {
-#if !defined(HELIX_PLATFORM_ESP32)
-            // No camera on the v1 Core+AMS cut — keep Scan QR hidden (default).
-            lv_obj_clear_flag(btn_scan_qr, LV_OBJ_FLAG_HIDDEN);
-#endif
-        }
+        // No reader sees the bypass spool, so its scan button can only be QR.
+        refresh_scan_button(nullptr);
 
         // No dropdowns for external spool
         return;
@@ -494,20 +491,14 @@ void AmsContextMenu::on_created(lv_obj_t* menu_obj) {
         lv_label_set_text(slot_header, helix::ui::lane_label(menu_lane_noun(), slot_index).c_str());
     }
 
-    // Show "Select Spool" and "Scan QR Code" buttons if Spoolman is available
+    // Show "Select Spool" if Spoolman is available
     auto* spoolman_subj = lv_xml_get_subject(nullptr, "printer_has_spoolman");
     bool has_spoolman = spoolman_subj && lv_subject_get_int(spoolman_subj) == 1;
     lv_obj_t* btn_spoolman = helix::ui::find_required(menu_obj, "btn_spoolman", "AmsContextMenu");
     if (btn_spoolman && has_spoolman) {
         lv_obj_clear_flag(btn_spoolman, LV_OBJ_FLAG_HIDDEN);
     }
-    lv_obj_t* btn_scan_qr = helix::ui::find_required(menu_obj, "btn_scan_qr", "AmsContextMenu");
-    if (btn_scan_qr && has_spoolman) {
-#if !defined(HELIX_PLATFORM_ESP32)
-        // No camera on the v1 Core+AMS cut — keep Scan QR hidden (default).
-        lv_obj_clear_flag(btn_scan_qr, LV_OBJ_FLAG_HIDDEN);
-#endif
-    }
+    refresh_scan_button(backend_);
 
     // Configure dropdowns based on backend capabilities
     configure_dropdowns();
@@ -742,6 +733,11 @@ void AmsContextMenu::handle_scan_qr() {
     dispatch_ams_action(MenuAction::SCAN_QR);
 }
 
+void AmsContextMenu::handle_scan_tag() {
+    spdlog::info("[AmsContextMenu] Tag read requested for slot {}", get_item_index());
+    dispatch_ams_action(MenuAction::SCAN_TAG);
+}
+
 // ============================================================================
 // Static Callback Registration
 // ============================================================================
@@ -761,6 +757,7 @@ void AmsContextMenu::register_callbacks() {
         {"ams_context_clear_spool_cb", on_clear_spool_cb},
         {"ams_context_spoolman_cb", on_spoolman_cb},
         {"ams_context_scan_qr_cb", on_scan_qr_cb},
+        {"ams_context_scan_rfid_cb", on_scan_tag_cb},
         {"ams_context_purge_cb", on_purge_cb},
         {"ams_context_bypass_toggle_cb", on_bypass_toggle_cb},
         {"ams_context_tool_changed_cb", on_tool_changed_cb},
@@ -857,6 +854,13 @@ void AmsContextMenu::on_scan_qr_cb(lv_event_t* /*e*/) {
     auto* self = get_active_instance();
     if (self) {
         self->handle_scan_qr();
+    }
+}
+
+void AmsContextMenu::on_scan_tag_cb(lv_event_t* /*e*/) {
+    auto* self = get_active_instance();
+    if (self) {
+        self->handle_scan_tag();
     }
 }
 
@@ -1312,6 +1316,10 @@ void dispatch_slot_menu_action(const SlotMenuHost& host, AmsContextMenu::MenuAct
 
     case MenuAction::SCAN_QR:
         scan_qr_into_slot(host, slot);
+        break;
+
+    case MenuAction::SCAN_TAG:
+        scan_slot_tag(slot);
         break;
 
     default:

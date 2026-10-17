@@ -334,6 +334,15 @@ class AmsBackendCfs : public AmsSubscriptionBackend {
     AmsError execute_device_action(const std::string& action_id,
                                    const std::any& value = {}) override;
 
+    // --- Tag read (BOX_INFO_REFRESH) ---
+    [[nodiscard]] bool supports_tag_read() const override;
+    AmsError read_slot_tag(int slot_index, TagReadCallback on_done = {}) override;
+    AmsError read_all_tags(TagReadCallback on_done = {}) override;
+
+    /// The BOX_INFO_REFRESH line for one unit: @p unit_addr is 1-based, @p bay_mask
+    /// one bit per bay (A=1, B=2, C=4, D=8). Public for tests.
+    [[nodiscard]] static std::string tag_refresh_gcode(int unit_addr, int bay_mask);
+
     // --- Cutter / purge-chute calibration (K1 stock dialect only) ---
     //
     // Choreography verified against a K1 Max klippy.log, fw 2.3.5.33
@@ -769,6 +778,14 @@ class AmsBackendCfs : public AmsSubscriptionBackend {
     /// SUCCESS for stock schemas and the identified Fork dialect; returns
     /// not_supported for an unidentified Flat implementation.
     [[nodiscard]] AmsError reject_if_flat_schema(const char* operation) const;
+
+    /// Why a tag read cannot run now, or success.
+    [[nodiscard]] AmsError tag_read_refusal() const;
+    /// Send one BOX_INFO_REFRESH per entry of @p bay_masks (unit address ->
+    /// bay bitmask), re-query the box once the last one finishes, and hand
+    /// @p on_done the outcome and @p slots on the main thread.
+    AmsError dispatch_tag_refresh(const std::map<int, int>& bay_masks, std::vector<int> slots,
+                                  TagReadCallback on_done);
 
     /// Stock-dialect bypass derivation: filament at the toolhead with no
     /// active CFS lane means the user hand-fed the external holder — map

@@ -640,6 +640,7 @@
   <translation tag="Choose Filament" ru="Выбрать филамент"/>
   <translation tag="Choose Layer" ru="Выбрать слой"/>
   <translation tag="Choose Model" ru="Выберите модель"/>
+  <translation tag="Choose Spool" ru="Выбрать катушку"/>
   <translation tag="Choose an existing filament, or tap + New to create one." ru="Выберите существующий филамент или нажмите + Новый, чтобы создать."/>
   <translation tag="Choose display language" ru="Выберите язык интерфейса"/>
   <translation tag="Choose head" ru="Выберите головку"/>
@@ -1683,6 +1684,7 @@
   <translation tag="K so far" ru="Текущее K"/>
   <translation tag="KEYBOARD LAYOUT" ru="РАСКЛАДКА КЛАВИАТУРЫ"/>
   <translation tag="KLICKY CONTROLS" ru="УПРАВЛЕНИЕ KLICKY"/>
+  <translation tag="Keep" ru="Оставить"/>
   <translation tag="Keep Navigation Bar" ru="Сохранить панель навигации"/>
   <translation tag="Keep Printing" ru="Продолжить печать"/>
   <translation tag="Keep Spool Info on Eject" ru="Сохранять данные катушки при извлечении"/>
@@ -1773,6 +1775,7 @@
   <translation tag="Line {} calls {}, which this printer treats as an emergency stop. Re-slice the file with a profile made for this printer." ru="Строка {} вызывает {}, что этот принтер считает аварийной остановкой. Нарежьте файл заново с профилем для этого принтера."/>
   <translation tag="Linear rails" ru="Линейные направляющие"/>
   <translation tag="Linear rails interval" ru="Интервал линейных направляющих"/>
+  <translation tag="Link to Spoolman?" ru="Связать со Spoolman?"/>
   <translation tag="Listen to all theme sounds" ru="Прослушать все звуки темы"/>
   <translation tag="Live Z-offset, with baby steps and Save" ru="Z-смещение в реальном времени, с подстройкой и сохранением"/>
   <translation tag="Live view from your webcam" ru="Прямая трансляция с веб-камеры"/>
@@ -2101,6 +2104,7 @@
   <translation tag="No spools found — tap to retry" ru="Катушки не найдены — нажмите для повтора"/>
   <translation tag="No spools match your search" ru="По вашему запросу катушки не найдены"/>
   <translation tag="No spools placed" ru="Катушки не положены"/>
+  <translation tag="No tag read" ru="Метка не считана"/>
   <translation tag="No tape detected in printer" ru="В принтере не обнаружена лента"/>
   <translation tag="No target printer configured" ru="Целевой принтер не настроен"/>
   <translation tag="No temperature sensors detected" ru="Датчики температуры не обнаружены"/>
@@ -2185,6 +2189,7 @@
   <translation tag="Objects" ru="Объекты"/>
   <translation tag="Objects in the print, with a tap to open the skip map" ru="Объекты печати, касание открывает карту пропуска"/>
   <translation tag="Off" ru="Выкл"/>
+  <translation tag="Off, QR code, or the spool&apos;s RFID tag where this system reads tags" ru="Выкл., QR-код или RFID-метка катушки, если система читает метки"/>
   <translation tag="Off:" ru="Выкл:"/>
   <translation tag="Off: runs with these values without asking" ru="Выкл.: запуск с этими значениями без запроса"/>
   <translation tag="Offer to save Z-offset changes to the printer config" ru="Предлагать сохранить изменения Z-Offset в конфигурации принтера"/>
@@ -2547,6 +2552,7 @@
   <translation tag="QGL failed: {}" ru="Ошибка QGL: {}"/>
   <translation tag="QGL may still be running — response timed out" ru="QGL может ещё выполняться — время ожидания истекло"/>
   <translation tag="QGL timed out" ru="QGL — время ожидания истекло"/>
+  <translation tag="QR Code" ru="QR-код"/>
   <translation tag="QR Only" ru="Только QR"/>
   <translation tag="QUEUED EVENTS" ru="ОЧЕРЕДЬ СОБЫТИЙ"/>
   <translation tag="QUICK BUTTONS" ru="БЫСТРЫЕ КНОПКИ"/>
@@ -2569,6 +2575,7 @@
   <translation tag="RAM" ru="RAM"/>
   <translation tag="RFCOMM connect failed" ru="Не удалось подключиться по RFCOMM"/>
   <translation tag="RFCOMM connect failed: " ru="Не удалось подключиться по RFCOMM: "/>
+  <translation tag="RFID" ru="RFID"/>
   <translation tag="RFID reader malfunction (left)" ru="Неисправность RFID-считывателя (левый)"/>
   <translation tag="RFID reader malfunction (right)" ru="Неисправность RFID-считывателя (правый)"/>
   <translation tag="RFID, auto-refill, nozzle and link care" ru="RFID, автопополнение, уход за соплом и связью"/>
@@ -2590,6 +2597,7 @@
   <translation tag="Re-syncs Happy Hare&apos;s tracked state with the hardware." ru="Повторно синхронизирует отслеживаемое состояние Happy Hare с оборудованием."/>
   <translation tag="Re-test A" ru="Повторный тест A"/>
   <translation tag="Re-test B" ru="Повторный тест B"/>
+  <translation tag="Reading the tag in {}…" ru="Чтение метки в {}…"/>
   <translation tag="Readings from extra temperature sensors" ru="Показания доп. датчиков температуры"/>
   <translation tag="Ready" ru="Готов"/>
   <translation tag="Ready for filament operations" ru="Готово к операциям с филаментом"/>
@@ -2843,6 +2851,7 @@
   <translation tag="Scan" ru="Поиск"/>
   <translation tag="Scan Cal" ru="Кал. скана"/>
   <translation tag="Scan QR Code" ru="Сканировать QR-код"/>
+  <translation tag="Scan RFID" ru="Сканировать RFID"/>
   <translation tag="Scan Spool QR Code" ru="Сканировать QR-код катушки"/>
   <translation tag="Scan and select a Bluetooth printer first" ru="Сначала найдите и выберите Bluetooth-принтер"/>
   <translation tag="Scan for Printers" ru="Поиск принтеров"/>
@@ -3042,6 +3051,7 @@
   <translation tag="Spool #{}" ru="Катушка #{}"/>
   <translation tag="Spool Info" ru="Информация о катушке"/>
   <translation tag="Spool Not Found" ru="Катушка не найдена"/>
+  <translation tag="Spool Scan Button" ru="Кнопка сканирования катушки"/>
   <translation tag="Spool Weight (g)" ru="Вес катушки (г)"/>
   <translation tag="Spool archived" ru="Катушка архивирована"/>
   <translation tag="Spool created successfully" ru="Катушка успешно создана"/>
@@ -3063,6 +3073,7 @@
   <translation tag="Spoolman needs a color for this filament." ru="Spoolman требует цвет для этого филамента."/>
   <translation tag="Spoolman needs a material for this filament." ru="Spoolman требует материал для этого филамента."/>
   <translation tag="Spoolman removed." ru="Spoolman удалён."/>
+  <translation tag="Spoolman spool #{} updated from the tag" ru="Катушка Spoolman №{} обновлена по метке"/>
   <translation tag="Spoolman unavailable — filament weights may be stale" ru="Spoolman недоступен — вес филамента может быть устаревшим"/>
   <translation tag="Spoolman was not configured." ru="Spoolman не был настроен."/>
   <translation tag="Spoolman: %zu Spool" ru="Spoolman: %zu катушка"/>
@@ -3183,7 +3194,10 @@
   <translation tag="TOGGLE: {}" ru="ПЕРЕКЛЮЧИТЬ: {}"/>
   <translation tag="TOOLS" ru="ИНСТРУМЕНТЫ"/>
   <translation tag="TPU" ru="TPU"/>
+  <translation tag="Tag Doesn&apos;t Match Spoolman" ru="Метка не совпадает со Spoolman"/>
   <translation tag="Tag Parts" ru="Отметить узлы"/>
+  <translation tag="Tag read failed" ru="Не удалось прочитать метку"/>
+  <translation tag="Tag read: review and Save" ru="Метка считана: проверьте и сохраните"/>
   <translation tag="Takes 3-5 min. Do not interrupt." ru="Занимает 3-5 мин. Не прерывайте."/>
   <translation tag="Tangle prevention active" ru="Защита от спутывания активна"/>
   <translation tag="Tangle prevention boosted" ru="Защита от спутывания усилена"/>
@@ -3317,6 +3331,8 @@
   <translation tag="The runout sensor indicates no filament is loaded. Start print anyway?" ru="Датчик окончания филамента показывает, что филамент не загружен. Всё равно начать печать?"/>
   <translation tag="The sensor in this CFS unit cannot be read. Check its connection, or the unit may need service" ru="Не удаётся считать датчик этого блока CFS. Проверьте подключение, иначе блоку требуется обслуживание"/>
   <translation tag="The speed of one fan you choose" ru="Скорость выбранного вентилятора"/>
+  <translation tag="The tag lacks a brand, material or colour Spoolman needs" ru="В метке нет бренда, материала или цвета, нужных Spoolman"/>
+  <translation tag="The tag matches this spool" ru="Метка совпадает с этой катушкой"/>
   <translation tag="The time, date, and system uptime" ru="Время, дата и время работы системы"/>
   <translation tag="The toolhead has filament but no AMS slot reports it loaded. Pull it out manually before printing. Start anyway?" ru="В печатающей головке есть филамент, но ни один слот AMS не сообщает о его загрузке. Извлеките его вручную перед печатью. Всё равно начать?"/>
   <translation tag="The toolhead has filament but no AMS slot reports it loaded. The printer may refuse to load a slot until it is cleared. Start anyway?" ru="В печатающей головке есть филамент, но ни один слот AMS не сообщает о его загрузке. Принтер может отказаться загружать слот, пока она не будет очищена. Всё равно начать?"/>
@@ -3570,6 +3586,7 @@
   <translation tag="Update Failed" ru="Ошибка обновления"/>
   <translation tag="Update Helper Macros" ru="Обновить вспомогательные макросы"/>
   <translation tag="Update Helper Macros?" ru="Обновить вспомогательные макросы?"/>
+  <translation tag="Update Spoolman" ru="Обновить Spoolman"/>
   <translation tag="Update Success" ru="Обновление успешно"/>
   <translation tag="Update from a Terminal" ru="Обновление через терминал"/>
   <translation tag="Update installed!" ru="Обновление установлено!"/>
@@ -3821,6 +3838,7 @@
   <translation tag="never sleeps" ru="никогда не спит"/>
   <translation tag="not detected" ru="не обнаружено"/>
   <translation tag="not loaded" ru="не загружен"/>
+  <translation tag="nothing" ru="ничего"/>
   <translation tag="nozzle" ru="сопло"/>
   <translation tag="of" ru="из"/>
   <translation tag="off" ru="выкл"/>
@@ -3903,6 +3921,7 @@
   <translation tag="{} lines in helixscreen.env were ignored" ru="В helixscreen.env проигнорировано строк: {}"/>
   <translation tag="{} m" ru="{} м"/>
   <translation tag="{} macro not configured" ru="Макрос {} не настроен"/>
+  <translation tag="{} matches Spoolman spool #{}" ru="{} совпадает с катушкой Spoolman №{}"/>
   <translation tag="{} matches." ru="{} подходит."/>
   <translation tag="{} may cause unintended changes. Are you sure?" ru="{} может привести к непреднамеренным изменениям. Вы уверены?"/>
   <translation tag="{} meter reset" ru="Счётчик «{}» сброшен"/>
@@ -3927,6 +3946,8 @@
   <translation tag="{} prints_many" ru="{} печатей"/>
   <translation tag="{} prints_one" ru="{} печать"/>
   <translation tag="{} queued" ru="В очереди: {}"/>
+  <translation tag="{} reads {}, but Spoolman spool #{} is {}. Update the spool in Spoolman to match the tag?" ru="{} читает {}, но катушка Spoolman №{} — это {}. Обновить катушку в Spoolman по метке?"/>
+  <translation tag="{} reads {}. Choose the matching Spoolman spool?" ru="{} читает {}. Выбрать подходящую катушку Spoolman?"/>
   <translation tag="{} serial" ru="Серийный номер {}"/>
   <translation tag="{} set to {}" ru="{} установлено на {}"/>
   <translation tag="{} set to {} {}" ru="{} установлено на {} {}"/>
@@ -3945,5 +3966,7 @@
   <translation tag="{} — response timed out" ru="{} — время ожидания ответа истекло"/>
   <translation tag="{} → {}: no filament loaded." ru="{} → {}: филамент не загружен."/>
   <translation tag="{}% left" ru="Осталось {}%"/>
+  <translation tag="{}: no tag read" ru="{}: метка не считана"/>
+  <translation tag="{}: tag read" ru="{}: метка считана"/>
   <translation tag="{}:{:02} elapsed" ru="прошло {}:{:02}"/>
 </translations>

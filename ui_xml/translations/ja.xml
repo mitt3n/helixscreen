@@ -601,6 +601,7 @@
   <translation tag="Choose Filament" ja="フィラメントを選択"/>
   <translation tag="Choose Layer" ja="レイヤーを選択"/>
   <translation tag="Choose Model" ja="モデルを選択"/>
+  <translation tag="Choose Spool" ja="スプールを選択"/>
   <translation tag="Choose an existing filament, or tap + New to create one." ja="既存のフィラメントを選択するか、+ 新規をタップして作成してください。"/>
   <translation tag="Choose display language" ja="表示言語を選択"/>
   <translation tag="Choose head" ja="ヘッドを選択"/>
@@ -1638,6 +1639,7 @@
   <translation tag="K so far" ja="現在の K"/>
   <translation tag="KEYBOARD LAYOUT" ja="キーボードレイアウト"/>
   <translation tag="KLICKY CONTROLS" ja="Klickyコントロール"/>
+  <translation tag="Keep" ja="そのまま"/>
   <translation tag="Keep Navigation Bar" ja="ナビゲーションバーを維持"/>
   <translation tag="Keep Printing" ja="印刷を続行"/>
   <translation tag="Keep Spool Info on Eject" ja="取り出し時にスプール情報を保持"/>
@@ -1728,6 +1730,7 @@
   <translation tag="Line {} calls {}, which this printer treats as an emergency stop. Re-slice the file with a profile made for this printer." ja="{} 行目で {} を実行します。このプリンターでは緊急停止とみなされます。このプリンター用のプロファイルでファイルを再スライスしてください。"/>
   <translation tag="Linear rails" ja="リニアレール"/>
   <translation tag="Linear rails interval" ja="リニアレールの間隔"/>
+  <translation tag="Link to Spoolman?" ja="Spoolman にリンクしますか?"/>
   <translation tag="Listen to all theme sounds" ja="すべてのテーマサウンドを試聴"/>
   <translation tag="Live Z-offset, with baby steps and Save" ja="ライブ Z-Offset、微調整と保存つき"/>
   <translation tag="Live view from your webcam" ja="ウェブカメラのライブ表示"/>
@@ -2056,6 +2059,7 @@
   <translation tag="No spools found — tap to retry" ja="スプールが見つかりません — タップして再試行"/>
   <translation tag="No spools match your search" ja="検索に一致するスプールがありません"/>
   <translation tag="No spools placed" ja="スプールは置いていません"/>
+  <translation tag="No tag read" ja="タグを読み取れませんでした"/>
   <translation tag="No tape detected in printer" ja="プリンターにテープが検出されません"/>
   <translation tag="No target printer configured" ja="対象プリンターが設定されていません"/>
   <translation tag="No temperature sensors detected" ja="温度センサーが検出されません"/>
@@ -2140,6 +2144,7 @@
   <translation tag="Objects" ja="オブジェクト"/>
   <translation tag="Objects in the print, with a tap to open the skip map" ja="印刷中のオブジェクト。タップでスキップマップを開きます"/>
   <translation tag="Off" ja="オフ"/>
+  <translation tag="Off, QR code, or the spool&apos;s RFID tag where this system reads tags" ja="オフ、QR コード、またはこのシステムがタグを読み取れる場合はスプールの RFID タグ"/>
   <translation tag="Off:" ja="オフ:"/>
   <translation tag="Off: runs with these values without asking" ja="オフ: これらの値で確認なしに実行"/>
   <translation tag="Offer to save Z-offset changes to the printer config" ja="Z-Offset の変更をプリンター設定に保存する操作を表示します"/>
@@ -2493,6 +2498,7 @@
   <translation tag="QGL failed: {}" ja="QGL に失敗しました: {}"/>
   <translation tag="QGL may still be running — response timed out" ja="QGL がまだ実行中の可能性があります — 応答タイムアウト"/>
   <translation tag="QGL timed out" ja="QGL がタイムアウトしました"/>
+  <translation tag="QR Code" ja="QR コード"/>
   <translation tag="QR Only" ja="QRのみ"/>
   <translation tag="QUEUED EVENTS" ja="キュー内のイベント"/>
   <translation tag="QUICK BUTTONS" ja="クイックボタン"/>
@@ -2515,6 +2521,7 @@
   <translation tag="RAM" ja="RAM"/>
   <translation tag="RFCOMM connect failed" ja="RFCOMM 接続に失敗しました"/>
   <translation tag="RFCOMM connect failed: " ja="RFCOMM 接続に失敗しました: "/>
+  <translation tag="RFID" ja="RFID"/>
   <translation tag="RFID reader malfunction (left)" ja="RFID リーダーの異常（左）"/>
   <translation tag="RFID reader malfunction (right)" ja="RFID リーダーの異常（右）"/>
   <translation tag="RFID, auto-refill, nozzle and link care" ja="RFID、自動補充、ノズルと接続のメンテナンス"/>
@@ -2536,6 +2543,7 @@
   <translation tag="Re-syncs Happy Hare&apos;s tracked state with the hardware." ja="Happy Hare が追跡している状態をハードウェアと再同期します。"/>
   <translation tag="Re-test A" ja="Aを再テスト"/>
   <translation tag="Re-test B" ja="Bを再テスト"/>
+  <translation tag="Reading the tag in {}…" ja="{} のタグを読み取り中…"/>
   <translation tag="Readings from extra temperature sensors" ja="追加の温度センサーの値"/>
   <translation tag="Ready" ja="準備完了"/>
   <translation tag="Ready for filament operations" ja="フィラメント操作の準備ができています"/>
@@ -2789,6 +2797,7 @@
   <translation tag="Scan" ja="スキャン"/>
   <translation tag="Scan Cal" ja="スキャンキャリブレーション"/>
   <translation tag="Scan QR Code" ja="QR コードをスキャン"/>
+  <translation tag="Scan RFID" ja="RFID をスキャン"/>
   <translation tag="Scan Spool QR Code" ja="スプール QR コードをスキャン"/>
   <translation tag="Scan and select a Bluetooth printer first" ja="先に Bluetooth プリンターをスキャンして選択してください"/>
   <translation tag="Scan for Printers" ja="プリンターをスキャン"/>
@@ -2988,6 +2997,7 @@
   <translation tag="Spool #{}" ja="スプール #{}"/>
   <translation tag="Spool Info" ja="スプール情報"/>
   <translation tag="Spool Not Found" ja="スプールが見つかりません"/>
+  <translation tag="Spool Scan Button" ja="スプールスキャンボタン"/>
   <translation tag="Spool Weight (g)" ja="スプール重量（g）"/>
   <translation tag="Spool archived" ja="スプールをアーカイブしました"/>
   <translation tag="Spool created successfully" ja="スプールを作成しました"/>
@@ -3009,6 +3019,7 @@
   <translation tag="Spoolman needs a color for this filament." ja="Spoolman にはこのフィラメントの色が必要です。"/>
   <translation tag="Spoolman needs a material for this filament." ja="Spoolman にはこのフィラメントの素材が必要です。"/>
   <translation tag="Spoolman removed." ja="Spoolman を削除しました。"/>
+  <translation tag="Spoolman spool #{} updated from the tag" ja="タグから Spoolman スプール #{} を更新しました"/>
   <translation tag="Spoolman unavailable — filament weights may be stale" ja="Spoolmanが利用できません — フィラメント重量が古い可能性があります"/>
   <translation tag="Spoolman was not configured." ja="Spoolman は設定されていませんでした。"/>
   <translation tag="Spoolman: %zu Spool" ja="Spoolman: %zu 個のスプール"/>
@@ -3123,7 +3134,10 @@
   <translation tag="TOGGLE: {}" ja="切り替え: {}"/>
   <translation tag="TOOLS" ja="ツール"/>
   <translation tag="TPU" ja="TPU"/>
+  <translation tag="Tag Doesn&apos;t Match Spoolman" ja="タグが Spoolman と一致しません"/>
   <translation tag="Tag Parts" ja="部位をタグ付け"/>
+  <translation tag="Tag read failed" ja="タグの読み取りに失敗しました"/>
+  <translation tag="Tag read: review and Save" ja="タグを読み取りました: 確認して保存してください"/>
   <translation tag="Takes 3-5 min. Do not interrupt." ja="3〜5分かかります。中断しないでください。"/>
   <translation tag="Tangle prevention active" ja="絡み防止 動作中"/>
   <translation tag="Tangle prevention boosted" ja="絡み防止 強化中"/>
@@ -3257,6 +3271,8 @@
   <translation tag="The runout sensor indicates no filament is loaded. Start print anyway?" ja="フィラメント切れセンサーがフィラメント未装填を検出しました。それでも印刷を開始しますか？"/>
   <translation tag="The sensor in this CFS unit cannot be read. Check its connection, or the unit may need service" ja="この CFS ユニットのセンサーを読み取れません。接続を確認してください。改善しない場合は修理が必要です"/>
   <translation tag="The speed of one fan you choose" ja="選んだファン1つの速度"/>
+  <translation tag="The tag lacks a brand, material or colour Spoolman needs" ja="タグに Spoolman が必要とするブランド、素材、または色がありません"/>
+  <translation tag="The tag matches this spool" ja="タグはこのスプールと一致しています"/>
   <translation tag="The time, date, and system uptime" ja="時間、日付、稼働時間"/>
   <translation tag="The toolhead has filament but no AMS slot reports it loaded. Pull it out manually before printing. Start anyway?" ja="ツールヘッドにフィラメントがありますが、装填済みと報告しているAMSスロットはありません。印刷前に手動で引き抜いてください。それでも印刷を開始しますか？"/>
   <translation tag="The toolhead has filament but no AMS slot reports it loaded. The printer may refuse to load a slot until it is cleared. Start anyway?" ja="ツールヘッドにフィラメントがありますが、装填済みと報告しているAMSスロットはありません。取り除くまで、プリンターがスロットの装填を拒否する場合があります。それでも印刷を開始しますか？"/>
@@ -3510,6 +3526,7 @@
   <translation tag="Update Failed" ja="更新失敗"/>
   <translation tag="Update Helper Macros" ja="ヘルパーマクロを更新"/>
   <translation tag="Update Helper Macros?" ja="ヘルパーマクロを更新しますか？"/>
+  <translation tag="Update Spoolman" ja="Spoolman を更新"/>
   <translation tag="Update Success" ja="更新成功"/>
   <translation tag="Update from a Terminal" ja="ターミナルから更新"/>
   <translation tag="Update installed!" ja="アップデートをインストールしました！"/>
@@ -3758,6 +3775,7 @@
   <translation tag="never sleeps" ja="スリープしない"/>
   <translation tag="not detected" ja="未検出"/>
   <translation tag="not loaded" ja="未装填"/>
+  <translation tag="nothing" ja="なし"/>
   <translation tag="nozzle" ja="ノズル"/>
   <translation tag="of" ja="の"/>
   <translation tag="off" ja="オフ"/>
@@ -3834,6 +3852,7 @@
   <translation tag="{} lines in helixscreen.env were ignored" ja="helixscreen.env の{}行が無視されました"/>
   <translation tag="{} m" ja="{} m"/>
   <translation tag="{} macro not configured" ja="{} マクロが未設定です"/>
+  <translation tag="{} matches Spoolman spool #{}" ja="{} は Spoolman スプール #{} と一致しています"/>
   <translation tag="{} matches." ja="{} が一致します。"/>
   <translation tag="{} may cause unintended changes. Are you sure?" ja="{} は意図しない変更を引き起こす可能性があります。よろしいですか？"/>
   <translation tag="{} meter reset" ja="{}のメーターをリセットしました"/>
@@ -3849,6 +3868,8 @@
   <translation tag="{} presets" ja="{} 個のプリセット"/>
   <translation tag="{} prints" ja="{} 件"/>
   <translation tag="{} queued" ja="{} 件キュー中"/>
+  <translation tag="{} reads {}, but Spoolman spool #{} is {}. Update the spool in Spoolman to match the tag?" ja="{} のタグは {} ですが、Spoolman スプール #{} は {} です。タグに合わせて Spoolman のスプールを更新しますか?"/>
+  <translation tag="{} reads {}. Choose the matching Spoolman spool?" ja="{} のタグは {} です。一致する Spoolman スプールを選択しますか?"/>
   <translation tag="{} serial" ja="{} シリアル番号"/>
   <translation tag="{} set to {}" ja="{} を {} に設定しました"/>
   <translation tag="{} set to {} {}" ja="{} を {} {} に設定しました"/>
@@ -3864,5 +3885,7 @@
   <translation tag="{} — response timed out" ja="{} — 応答タイムアウト"/>
   <translation tag="{} → {}: no filament loaded." ja="{} → {}: フィラメントが装填されていません。"/>
   <translation tag="{}% left" ja="残り {}%"/>
+  <translation tag="{}: no tag read" ja="{}: タグを読み取れませんでした"/>
+  <translation tag="{}: tag read" ja="{}: タグを読み取りました"/>
   <translation tag="{}:{:02} elapsed" ja="経過 {}:{:02}"/>
 </translations>

@@ -148,6 +148,16 @@
           <bind_flag_if_eq subject="ams_device_ops_printer_retains_spool_info" flag="hidden" ref_value="0"/>
           <bind_flag_if_eq subject="ams_device_ops_reports_spool_ids" flag="hidden" ref_value="0"/>
         </text_small>
+        <!-- What the scan button in the slot menu and slot editor does, in
+             SpoolScanMethod order (Off, Auto, QR Code, RFID). Auto and RFID
+             read the spool's tag on a system with a reader and scan a QR
+             code elsewhere. -->
+        <setting_dropdown_row name="row_ams_spool_scan_method"
+                              label="Spool Scan Button" icon="magnify_scan"
+                              description="Off, QR code, or the spool's RFID tag where this system reads tags"
+                              options="Off&#10;Auto&#10;QR Code&#10;RFID"
+                              options_tag="Off&#10;Auto&#10;QR Code&#10;RFID" bind_selected="ams_spool_scan_method"
+                              callback="on_ams_spool_scan_method_changed"/>
         <!-- Offer the bypass controls on a machine whose firmware reports none.
              Shown only while the firmware says no, so it stays available for the
              user to switch back off. Happy Hare defaults [mmu_machine] has_bypass

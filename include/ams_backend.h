@@ -1784,6 +1784,47 @@ class AmsBackend {
     }
 
     /**
+     * @brief Called once a requested tag read has landed, on the main thread.
+     *
+     * @p result is the command's outcome; @p slots are the global slot indices
+     * the read covered. On success the backend has already re-read its status,
+     * so the lane's VendorCache record holds what the reader found.
+     */
+    using TagReadCallback = std::function<void(const AmsError& result, std::vector<int> slots)>;
+
+    /**
+     * @brief Whether the filament system can re-read a spool's tag on demand.
+     *
+     * A virtual rather than a trait: a backend may only learn which firmware
+     * dialect it is talking to from its first status frame.
+     */
+    [[nodiscard]] virtual bool supports_tag_read() const {
+        return false;
+    }
+
+    /**
+     * @brief Re-read the tag on the spool in one slot.
+     *
+     * @param on_done Fired on the main thread when the read has landed or
+     *        failed. Not fired when the request is refused up front; the
+     *        returned error says why.
+     */
+    virtual AmsError read_slot_tag(int slot_index, TagReadCallback on_done = {}) {
+        (void)slot_index;
+        (void)on_done;
+        return AmsErrorHelper::not_supported("Tag read not supported");
+    }
+
+    /**
+     * @brief Re-read the tag on every spool the system holds.
+     * @param on_done As read_slot_tag().
+     */
+    virtual AmsError read_all_tags(TagReadCallback on_done = {}) {
+        (void)on_done;
+        return AmsErrorHelper::not_supported("Tag read not supported");
+    }
+
+    /**
      * @brief Display label for the sidebar reset()-button.
      *
      * Backends where reset() is a genuine reset keep "Reset"; selector-based

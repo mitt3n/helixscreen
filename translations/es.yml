@@ -661,6 +661,7 @@ translations:
   Choose Filament: Elegir Filamento
   Choose Layer: 'Elegir capa'
   Choose Model: Elegir Modelo
+  Choose Spool: 'Elegir bobina'
   Choose an existing filament, or tap + New to create one.: Elige un filamento o toca
     + Nuevo para crear uno.
   Choose display language: Elija el idioma de visualización
@@ -1812,6 +1813,7 @@ translations:
   K so far: 'K hasta ahora'
   KEYBOARD LAYOUT: DISTRIBUCIÓN DE TECLADO
   KLICKY CONTROLS: CONTROLES KLICKY
+  Keep: 'Conservar'
   Keep Navigation Bar: Mantener barra de navegación
   Keep Printing: Continuar Imprimiendo
   Keep Spool Info on Eject: Conservar información de la bobina al expulsar
@@ -1918,6 +1920,7 @@ translations:
   Line {} calls {}, which this printer treats as an emergency stop. Re-slice the file with a profile made for this printer.: 'La línea {} llama a {}, que esta impresora trata como una parada de emergencia. Vuelva a laminar el archivo con un perfil hecho para esta impresora.'
   Linear rails: 'Rieles lineales'
   Linear rails interval: 'Intervalo de los rieles lineales'
+  Link to Spoolman?: '¿Vincular con Spoolman?'
   Listen to all theme sounds: Escucha todos los sonidos del tema
   Live Z-offset, with baby steps and Save: Z-Offset en vivo, con pasos finos y Guardar
   Live view from your webcam: Vista en vivo de tu webcam
@@ -2271,6 +2274,7 @@ translations:
   No spools match your search: Ninguna bobina coincide con su búsqueda
   No spools placed: No coloqué bobinas
 
+  No tag read: 'No se leyó ninguna etiqueta'
   No tape detected in printer: No se detectó cinta en la impresora
   No target printer configured: Ninguna impresora de destino configurada
   No temperature sensors detected: 'No se detectaron sensores de temperatura'
@@ -2359,6 +2363,7 @@ translations:
   Objects: Objetos
   Objects in the print, with a tap to open the skip map: 'Objetos de la impresión, con un toque abre el mapa para omitir'
   'Off': Apagado
+  Off, QR code, or the spool's RFID tag where this system reads tags: 'Desactivado, código QR o la etiqueta RFID de la bobina si este sistema lee etiquetas'
   'Off:': 'Apagado:'
   'Off: runs with these values without asking': 'Desactivado: ejecuta con estos valores sin preguntar'
   Offer to save Z-offset changes to the printer config: 'Ofrecer guardar los cambios de Z-Offset en la configuración de la impresora'
@@ -2744,6 +2749,7 @@ translations:
   QGL may still be running — response timed out: QGL puede seguir en curso — tiempo
     de espera agotado
   QGL timed out: QGL — tiempo de espera agotado
+  QR Code: 'Código QR'
   QR Only: Solo QR
   QUEUED EVENTS: EVENTOS EN COLA
   QUICK BUTTONS: BOTONES RÁPIDOS
@@ -2766,6 +2772,7 @@ translations:
   RAM: RAM
   RFCOMM connect failed: Error al conectar RFCOMM
   'RFCOMM connect failed: ': 'Error al conectar RFCOMM: '
+  RFID: 'RFID'
   RFID reader malfunction (left): Fallo del lector RFID (izquierdo)
   RFID reader malfunction (right): Fallo del lector RFID (derecho)
   RFID, auto-refill, nozzle and link care: RFID, rellenado automático, cuidado de boquilla y enlace
@@ -2788,6 +2795,7 @@ translations:
     estado registrado de Happy Hare con el hardware.
   Re-test A: Probar A de nuevo
   Re-test B: Probar B de nuevo
+  Reading the tag in {}…: 'Leyendo la etiqueta en {}…'
   Readings from extra temperature sensors: Lecturas de sensores adicionales
   Ready: Listo
   Ready for filament operations: Listo para operaciones de filamento
@@ -3073,6 +3081,7 @@ translations:
   Scan: Buscar
   Scan Cal: Cal Escaneo
   Scan QR Code: Escanear Código QR
+  Scan RFID: 'Escanear RFID'
   Scan Spool QR Code: Escanear Código QR de Bobina
   Scan and select a Bluetooth printer first: Escanee y seleccione una impresora Bluetooth
     primero
@@ -3301,6 +3310,7 @@ translations:
   'Spool #{}': Bobina n.º {}
   Spool Info: Info de bobina
   Spool Not Found: 'Bobina no encontrada'
+  Spool Scan Button: 'Botón de escaneo de bobina'
   Spool Weight (g): Peso de Bobina (g)
   Spool archived: Bobina archivada
   Spool created successfully: Bobina creada correctamente
@@ -3323,6 +3333,7 @@ translations:
   Spoolman needs a color for this filament.: Spoolman necesita un color para este filamento.
   Spoolman needs a material for this filament.: Spoolman necesita un material para este filamento.
   Spoolman removed.: Spoolman eliminado.
+  'Spoolman spool #{} updated from the tag': 'Bobina #{} de Spoolman actualizada desde la etiqueta'
   Spoolman unavailable — filament weights may be stale: Spoolman no disponible — los
     pesos del filamento pueden estar desactualizados
   Spoolman was not configured.: Spoolman no estaba configurado.
@@ -3453,7 +3464,10 @@ translations:
   'TOGGLE: {}': 'CONMUTAR: {}'
   TOOLS: HERRAMIENTAS
   TPU: TPU
+  Tag Doesn't Match Spoolman: 'La etiqueta no coincide con Spoolman'
   Tag Parts: Marcar Componentes
+  Tag read failed: 'No se pudo leer la etiqueta'
+  'Tag read: review and Save': 'Etiqueta leída: revisa y guarda'
   Takes 3-5 min. Do not interrupt.: Tarda 3-5 min. No interrumpa.
   Tangle prevention active: Prevención de enredos activa
   Tangle prevention boosted: Prevención de enredos reforzada
@@ -3620,6 +3634,8 @@ translations:
     modos?
   The sensor in this CFS unit cannot be read. Check its connection, or the unit may need service: No se puede leer el sensor de esta unidad CFS. Compruebe su conexión o puede que la unidad necesite servicio
   The speed of one fan you choose: La velocidad de un ventilador elegido
+  The tag lacks a brand, material or colour Spoolman needs: 'A la etiqueta le falta una marca, material o color que Spoolman necesita'
+  The tag matches this spool: 'La etiqueta coincide con esta bobina'
   The time, date, and system uptime: Hora, fecha y tiempo de actividad
   The toolhead has filament but no AMS slot reports it loaded. Pull it out manually before printing. Start anyway?: El cabezal tiene filamento, pero ninguna ranura del AMS informa que esté cargado. Retírelo manualmente antes de imprimir. ¿Iniciar de todos modos?
   ? The toolhead has filament but no AMS slot reports it loaded. The printer may refuse to load a slot until it is cleared. Start anyway?
@@ -3920,6 +3936,7 @@ translations:
   Update Failed: Actualización fallida
   Update Helper Macros: 'Actualizar macros de ayuda'
   Update Helper Macros?: '¿Actualizar macros de ayuda?'
+  Update Spoolman: 'Actualizar Spoolman'
   Update Success: Actualización correcta
   Update from a Terminal: Actualizar desde un terminal
   Update installed!: ¡Actualización instalada!
@@ -4185,6 +4202,7 @@ translations:
   never sleeps: nunca duerme
   not detected: no detectado
   not loaded: 'no cargado'
+  nothing: 'nada'
   nozzle: boquilla
   of: de
   'off': apagado
@@ -4267,6 +4285,7 @@ translations:
   '{} kept crashing the panel; pick a printer to connect': '{} bloqueó la pantalla repetidamente; elige una impresora para conectar'
   '{} m': '{} m'
   '{} macro not configured': Macro {} no configurado
+  '{} matches Spoolman spool #{}': '{} coincide con la bobina #{} de Spoolman'
   '{} matches.': '{} coincide.'
   '{} may cause unintended changes. Are you sure?': '{} puede causar cambios no deseados.
     ¿Estás seguro?'
@@ -4283,6 +4302,8 @@ translations:
   '{} presets': '{} preajustes'
   '{} prints': '{} impresiones'
   '{} queued': '{} en cola'
+  '{} reads {}, but Spoolman spool #{} is {}. Update the spool in Spoolman to match the tag?': '{} lee {}, pero la bobina #{} de Spoolman es {}. ¿Actualizar la bobina en Spoolman para que coincida con la etiqueta?'
+  '{} reads {}. Choose the matching Spoolman spool?': '{} lee {}. ¿Elegir la bobina de Spoolman correspondiente?'
   '{} serial': 'N.º de serie de {}'
   '{} set to {}': '{} ajustado a {}'
   '{} set to {} {}': '{} ajustado a {} {}'
@@ -4299,4 +4320,6 @@ translations:
   '{} — response timed out': '{} — tiempo de espera agotado'
   '{} → {}: no filament loaded.': '{} → {}: no hay filamento cargado.'
   '{}% left': 'Queda {}%'
+  '{}: no tag read': '{}: no se leyó ninguna etiqueta'
+  '{}: tag read': '{}: etiqueta leída'
   '{}:{:02} elapsed': '{}:{:02} transcurrido'

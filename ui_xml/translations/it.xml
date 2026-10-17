@@ -601,6 +601,7 @@
   <translation tag="Choose Filament" it="Scegli filamento"/>
   <translation tag="Choose Layer" it="Scegli strato"/>
   <translation tag="Choose Model" it="Scegli modello"/>
+  <translation tag="Choose Spool" it="Scegli bobina"/>
   <translation tag="Choose an existing filament, or tap + New to create one." it="Scegli un filamento esistente, o tocca + Nuovo per crearne uno."/>
   <translation tag="Choose display language" it="Scegli lingua di visualizzazione"/>
   <translation tag="Choose head" it="Scegli testina"/>
@@ -1638,6 +1639,7 @@
   <translation tag="K so far" it="K finora"/>
   <translation tag="KEYBOARD LAYOUT" it="LAYOUT TASTIERA"/>
   <translation tag="KLICKY CONTROLS" it="CONTROLLI KLICKY"/>
+  <translation tag="Keep" it="Mantieni"/>
   <translation tag="Keep Navigation Bar" it="Mantieni barra di navigazione"/>
   <translation tag="Keep Printing" it="Continua a stampare"/>
   <translation tag="Keep Spool Info on Eject" it="Mantieni le informazioni sulla bobina all&apos;espulsione"/>
@@ -1728,6 +1730,7 @@
   <translation tag="Line {} calls {}, which this printer treats as an emergency stop. Re-slice the file with a profile made for this printer." it="La riga {} chiama {}, che questa stampante tratta come un arresto di emergenza. Sezionare di nuovo il file con un profilo creato per questa stampante."/>
   <translation tag="Linear rails" it="Guide lineari"/>
   <translation tag="Linear rails interval" it="Intervallo guide lineari"/>
+  <translation tag="Link to Spoolman?" it="Collegare a Spoolman?"/>
   <translation tag="Listen to all theme sounds" it="Ascolta tutti i suoni del tema"/>
   <translation tag="Live Z-offset, with baby steps and Save" it="Z-Offset in tempo reale, con micro-passi e Salva"/>
   <translation tag="Live view from your webcam" it="Vista live dalla webcam"/>
@@ -2056,6 +2059,7 @@
   <translation tag="No spools found — tap to retry" it="Nessuna bobina trovata — tocca per riprovare"/>
   <translation tag="No spools match your search" it="Nessuna bobina corrisponde alla tua ricerca"/>
   <translation tag="No spools placed" it="Nessuna bobina appoggiata"/>
+  <translation tag="No tag read" it="Nessun tag letto"/>
   <translation tag="No tape detected in printer" it="Nessun nastro rilevato nella stampante"/>
   <translation tag="No target printer configured" it="Nessuna stampante di destinazione configurata"/>
   <translation tag="No temperature sensors detected" it="Nessun sensore di temperatura rilevato"/>
@@ -2140,6 +2144,7 @@
   <translation tag="Objects" it="Oggetti"/>
   <translation tag="Objects in the print, with a tap to open the skip map" it="Oggetti della stampa, tocca per aprire la mappa"/>
   <translation tag="Off" it="Off"/>
+  <translation tag="Off, QR code, or the spool&apos;s RFID tag where this system reads tags" it="Disattivato, codice QR o il tag RFID della bobina se questo sistema legge i tag"/>
   <translation tag="Off:" it="Off:"/>
   <translation tag="Off: runs with these values without asking" it="Disattivato: esegue con questi valori senza chiedere"/>
   <translation tag="Offer to save Z-offset changes to the printer config" it="Proponi di salvare le modifiche allo Z-Offset nella configurazione della stampante"/>
@@ -2493,6 +2498,7 @@
   <translation tag="QGL failed: {}" it="QGL fallito: {}"/>
   <translation tag="QGL may still be running — response timed out" it="QGL potrebbe essere ancora in corso — tempo scaduto"/>
   <translation tag="QGL timed out" it="QGL — tempo scaduto"/>
+  <translation tag="QR Code" it="Codice QR"/>
   <translation tag="QR Only" it="Solo QR"/>
   <translation tag="QUEUED EVENTS" it="EVENTI IN CODA"/>
   <translation tag="QUICK BUTTONS" it="PULSANTI RAPIDI"/>
@@ -2515,6 +2521,7 @@
   <translation tag="RAM" it="RAM"/>
   <translation tag="RFCOMM connect failed" it="Connessione RFCOMM fallita"/>
   <translation tag="RFCOMM connect failed: " it="Connessione RFCOMM fallita: "/>
+  <translation tag="RFID" it="RFID"/>
   <translation tag="RFID reader malfunction (left)" it="Malfunzionamento del lettore RFID (sinistro)"/>
   <translation tag="RFID reader malfunction (right)" it="Malfunzionamento del lettore RFID (destro)"/>
   <translation tag="RFID, auto-refill, nozzle and link care" it="RFID, rifornimento automatico, cura di ugello e collegamento"/>
@@ -2536,6 +2543,7 @@
   <translation tag="Re-syncs Happy Hare&apos;s tracked state with the hardware." it="Risincronizza lo stato tracciato di Happy Hare con l&apos;hardware."/>
   <translation tag="Re-test A" it="Ritesta A"/>
   <translation tag="Re-test B" it="Ritesta B"/>
+  <translation tag="Reading the tag in {}…" it="Lettura del tag in {}…"/>
   <translation tag="Readings from extra temperature sensors" it="Letture dai sensori di temperatura extra"/>
   <translation tag="Ready" it="Pronto"/>
   <translation tag="Ready for filament operations" it="Pronto per le operazioni filamento"/>
@@ -2789,6 +2797,7 @@
   <translation tag="Scan" it="Scansiona"/>
   <translation tag="Scan Cal" it="Cal. scan"/>
   <translation tag="Scan QR Code" it="Scansiona codice QR"/>
+  <translation tag="Scan RFID" it="Scansiona RFID"/>
   <translation tag="Scan Spool QR Code" it="Scansiona codice QR bobina"/>
   <translation tag="Scan and select a Bluetooth printer first" it="Prima scansiona e seleziona una stampante Bluetooth"/>
   <translation tag="Scan for Printers" it="Cerca stampanti"/>
@@ -2988,6 +2997,7 @@
   <translation tag="Spool #{}" it="Bobina #{}"/>
   <translation tag="Spool Info" it="Info bobina"/>
   <translation tag="Spool Not Found" it="Bobina non trovata"/>
+  <translation tag="Spool Scan Button" it="Pulsante di scansione bobina"/>
   <translation tag="Spool Weight (g)" it="Peso bobina (g)"/>
   <translation tag="Spool archived" it="Bobina archiviata"/>
   <translation tag="Spool created successfully" it="Bobina creata con successo"/>
@@ -3009,6 +3019,7 @@
   <translation tag="Spoolman needs a color for this filament." it="Spoolman richiede un colore per questo filamento."/>
   <translation tag="Spoolman needs a material for this filament." it="Spoolman richiede un materiale per questo filamento."/>
   <translation tag="Spoolman removed." it="Spoolman rimosso."/>
+  <translation tag="Spoolman spool #{} updated from the tag" it="Bobina Spoolman #{} aggiornata dal tag"/>
   <translation tag="Spoolman unavailable — filament weights may be stale" it="Spoolman non disponibile — i pesi del filamento potrebbero non essere aggiornati"/>
   <translation tag="Spoolman was not configured." it="Spoolman non era configurato."/>
   <translation tag="Spoolman: %zu Spool" it="Spoolman: %zu bobina"/>
@@ -3123,7 +3134,10 @@
   <translation tag="TOGGLE: {}" it="COMMUTA: {}"/>
   <translation tag="TOOLS" it="STRUMENTI"/>
   <translation tag="TPU" it="TPU"/>
+  <translation tag="Tag Doesn&apos;t Match Spoolman" it="Il tag non corrisponde a Spoolman"/>
   <translation tag="Tag Parts" it="Contrassegna componenti"/>
+  <translation tag="Tag read failed" it="Lettura del tag non riuscita"/>
+  <translation tag="Tag read: review and Save" it="Tag letto: controlla e salva"/>
   <translation tag="Takes 3-5 min. Do not interrupt." it="Richiede 3-5 min. Non interrompere."/>
   <translation tag="Tangle prevention active" it="Prevenzione grovigli attiva"/>
   <translation tag="Tangle prevention boosted" it="Prevenzione grovigli potenziata"/>
@@ -3257,6 +3271,8 @@
   <translation tag="The runout sensor indicates no filament is loaded. Start print anyway?" it="Il sensore di esaurimento indica che nessun filamento è caricato. Avviare comunque la stampa?"/>
   <translation tag="The sensor in this CFS unit cannot be read. Check its connection, or the unit may need service" it="Il sensore di questa unità CFS non può essere letto. Controllare il collegamento, altrimenti l&apos;unità richiede assistenza"/>
   <translation tag="The speed of one fan you choose" it="La velocità di una ventola a scelta"/>
+  <translation tag="The tag lacks a brand, material or colour Spoolman needs" it="Al tag mancano una marca, un materiale o un colore richiesti da Spoolman"/>
+  <translation tag="The tag matches this spool" it="Il tag corrisponde a questa bobina"/>
   <translation tag="The time, date, and system uptime" it="Ora, data e tempo di attività"/>
   <translation tag="The toolhead has filament but no AMS slot reports it loaded. Pull it out manually before printing. Start anyway?" it="La testina contiene filamento ma nessuno slot AMS lo riporta come caricato. Estrailo manualmente prima di stampare. Avviare comunque?"/>
   <translation tag="The toolhead has filament but no AMS slot reports it loaded. The printer may refuse to load a slot until it is cleared. Start anyway?" it="La testina contiene filamento ma nessuno slot AMS lo riporta come caricato. La stampante potrebbe rifiutare il caricamento di uno slot finché non viene svuotata. Avviare comunque?"/>
@@ -3510,6 +3526,7 @@
   <translation tag="Update Failed" it="Aggiornamento Fallito"/>
   <translation tag="Update Helper Macros" it="Aggiorna macro di ausilio"/>
   <translation tag="Update Helper Macros?" it="Aggiornare le macro di ausilio?"/>
+  <translation tag="Update Spoolman" it="Aggiorna Spoolman"/>
   <translation tag="Update Success" it="Aggiornamento riuscito"/>
   <translation tag="Update from a Terminal" it="Aggiorna da un terminale"/>
   <translation tag="Update installed!" it="Aggiornamento installato!"/>
@@ -3758,6 +3775,7 @@
   <translation tag="never sleeps" it="non va mai in sospensione"/>
   <translation tag="not detected" it="non rilevato"/>
   <translation tag="not loaded" it="non caricato"/>
+  <translation tag="nothing" it="niente"/>
   <translation tag="nozzle" it="ugello"/>
   <translation tag="of" it="di"/>
   <translation tag="off" it="spento"/>
@@ -3834,6 +3852,7 @@
   <translation tag="{} lines in helixscreen.env were ignored" it="{} righe di helixscreen.env sono state ignorate"/>
   <translation tag="{} m" it="{} m"/>
   <translation tag="{} macro not configured" it="Macro {} non configurata"/>
+  <translation tag="{} matches Spoolman spool #{}" it="{} corrisponde alla bobina Spoolman #{}"/>
   <translation tag="{} matches." it="{} corrisponde."/>
   <translation tag="{} may cause unintended changes. Are you sure?" it="{} potrebbe causare modifiche indesiderate. Sei sicuro?"/>
   <translation tag="{} meter reset" it="Contatore {} ripristinato"/>
@@ -3849,6 +3868,8 @@
   <translation tag="{} presets" it="{} preset"/>
   <translation tag="{} prints" it="{} stampe"/>
   <translation tag="{} queued" it="{} in coda"/>
+  <translation tag="{} reads {}, but Spoolman spool #{} is {}. Update the spool in Spoolman to match the tag?" it="{} legge {}, ma la bobina Spoolman #{} è {}. Aggiornare la bobina in Spoolman in base al tag?"/>
+  <translation tag="{} reads {}. Choose the matching Spoolman spool?" it="{} legge {}. Scegliere la bobina Spoolman corrispondente?"/>
   <translation tag="{} serial" it="Numero di serie {}"/>
   <translation tag="{} set to {}" it="{} impostato su {}"/>
   <translation tag="{} set to {} {}" it="{} impostato su {} {}"/>
@@ -3864,5 +3885,7 @@
   <translation tag="{} — response timed out" it="{} — tempo scaduto"/>
   <translation tag="{} → {}: no filament loaded." it="{} → {}: nessun filamento caricato."/>
   <translation tag="{}% left" it="{}% rimanente"/>
+  <translation tag="{}: no tag read" it="{}: nessun tag letto"/>
+  <translation tag="{}: tag read" it="{}: tag letto"/>
   <translation tag="{}:{:02} elapsed" it="{}:{:02} trascorso"/>
 </translations>

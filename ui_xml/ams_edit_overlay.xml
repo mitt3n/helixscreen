@@ -148,12 +148,12 @@
         <!-- Filament actions: paired row under the card (design Option 1).
              Change Filament is the primary swap action — the Spoolman picker
              when connected, else the untracked spool-edit setup (routing in
-             handle_change_filament). Scan QR is the identity fast path for both
-             linked and unlinked slots and is gated on Spoolman availability
-             (update_spoolman_button_state toggles btn_scan_qr_code's hidden
-             flag). A hidden flex child drops out of layout, so when Scan QR is
-             hidden the lone Change Filament button stays centered. Unlink and
-             Print Label live in the spool-edit view. -->
+             handle_change_filament). Beside it is the one scan button the
+             Spool Scan Button setting picks (ams_scan_button: 1 = QR code,
+             2 = the system's tag reader); both fill the form for review. A
+             hidden flex child drops out of layout, so with no scan button the
+             lone Change Filament button stays centered. Unlink and Print Label
+             live in the spool-edit view. -->
         <lv_obj name="filament_action_row"
                 width="100%" height="content" style_pad_left="#space_md" style_pad_right="#space_md" style_pad_top="0"
                 style_pad_bottom="#space_sm" flex_flow="row_wrap" style_flex_main_place="center"
@@ -164,7 +164,13 @@
           </ui_button>
           <ui_button name="btn_scan_qr_code"
                      height="#button_height" text="Scan QR Code" variant="secondary" icon="qrcode_scan">
+            <bind_flag_if_not_eq subject="ams_scan_button" flag="hidden" ref_value="1"/>
             <event_cb trigger="clicked" callback="ams_edit_scan_qr_cb"/>
+          </ui_button>
+          <ui_button name="btn_scan_rfid_tag"
+                     height="#button_height" text="Scan RFID" variant="secondary" icon="magnify_scan">
+            <bind_flag_if_not_eq subject="ams_scan_button" flag="hidden" ref_value="2"/>
+            <event_cb trigger="clicked" callback="ams_edit_scan_rfid_cb"/>
           </ui_button>
         </lv_obj>
       </lv_obj>

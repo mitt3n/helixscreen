@@ -22,6 +22,7 @@
 #include "filament_display_name.h"
 #include "filament_mapper.h"
 #include "format_utils.h"
+#include "lane_source_store.h"
 #include "lane_translation.h"
 #include "spoolman_manager.h"
 #include "static_panel_registry.h"
@@ -33,6 +34,7 @@
 #endif
 #include "ui_breakpoint.h"
 #include "ui_overlay_qr_scanner.h"
+#include "ui_spool_scan.h"
 #include "ui_toast_manager.h"
 
 #include "i_moonraker_api.h"
@@ -325,6 +327,7 @@ void AmsEditOverlay::on_deactivating(DeactivateReason) {
 // ============================================================================
 
 void AmsEditOverlay::init_subjects() {
+    helix::ui::init_scan_button_subject();
     init_subjects_guarded([this]() {
         // Initialize string subjects with empty/default buffers (bound in
         // create(), not XML-registered)
@@ -1348,28 +1351,49 @@ void AmsEditOverlay::update_spoolman_button_state() {
         return;
     }
 
-    // Fresh synchronous read — the XML binding fires asynchronously (#311).
-    auto* spoolman_subj = lv_xml_get_subject(nullptr, "printer_has_spoolman");
-    bool has_spoolman = spoolman_subj && lv_subject_get_int(spoolman_subj) == 1;
+    // The bypass spool has no reader, so its scan button can only be QR.
+    helix::ui::refresh_scan_button(slot_index_ >= 0 ? AmsState::instance().get_backend() : nullptr);
+}
 
-    // The action row itself is always visible — Change Filament works with and
-    // without Spoolman. Only the Scan QR button is gated on Spoolman: it has no
-    // offline analogue. When hidden it drops out of the flex row, leaving the
-    // lone Change Filament button centered.
-    lv_obj_t* scan_btn = helix::ui::find_required(overlay_root_, "btn_scan_qr_code", get_name());
-    if (scan_btn) {
-#if defined(HELIX_PLATFORM_ESP32)
-        // No camera on the v1 Core+AMS cut — Scan QR has no offline analogue,
-        // so keep it hidden regardless of Spoolman availability.
-        lv_obj_add_flag(scan_btn, LV_OBJ_FLAG_HIDDEN);
-        (void)has_spoolman;
-#else
-        if (has_spoolman) {
-            lv_obj_remove_flag(scan_btn, LV_OBJ_FLAG_HIDDEN);
-        } else {
-            lv_obj_add_flag(scan_btn, LV_OBJ_FLAG_HIDDEN);
-        }
-#endif
+void AmsEditOverlay::handle_scan_tag() {
+    AmsBackend* backend = AmsState::instance().get_backend();
+    if (!backend || slot_index_ < 0) {
+        return;
+    }
+    const int slot = slot_index_;
+    spdlog::info("[AmsEditOverlay] Tag read requested for slot {}", slot);
+    AmsError err =
+        backend->read_slot_tag(slot, [slot](const AmsError& result, std::vector<int> /*slots*/) {
+            if (!result.success()) {
+                helix::ui::notify_ams_error(result, lv_tr("Tag read failed"));
+                return;
+            }
+            // Same re-validation as the QR result: the editor may have closed or
+            // moved to another slot while the box was reading.
+            auto& editor = get_ams_edit_overlay();
+            AmsBackend* be = AmsState::instance().get_backend();
+            if (!editor.get_root() || editor.slot_index_ != slot || !be) {
+                return;
+            }
+            const auto tag = helix::ams::lane_sources(be->lane_id(slot)).vendor_cache;
+            const auto cmp = helix::ui::compare_tag_to_slot(tag, editor.working_info_);
+            if (cmp.outcome == helix::ui::TagComparison::Outcome::NoReading) {
+                NOTIFY_WARNING("{}", lv_tr("No tag read"));
+                return;
+            }
+            if (cmp.outcome == helix::ui::TagComparison::Outcome::Matches) {
+                NOTIFY_INFO("{}", lv_tr("The tag matches this spool"));
+                return;
+            }
+            editor.working_info_ = helix::ui::apply_tag_to_slot(editor.working_info_, *tag);
+            editor.switch_to_form();
+            editor.update_ui();
+            editor.update_temp_display();
+            editor.update_sync_button_state();
+            NOTIFY_INFO("{}", lv_tr("Tag read: review and Save"));
+        });
+    if (!err.success()) {
+        helix::ui::notify_ams_error(err, lv_tr("Tag read failed"));
     }
 }
 
@@ -2272,6 +2296,7 @@ void AmsEditOverlay::register_callbacks() {
 #endif
          }},
         {"ams_edit_scan_qr_cb", [](lv_event_t*) { get_ams_edit_overlay().handle_scan_qr(); }},
+        {"ams_edit_scan_rfid_cb", [](lv_event_t*) { get_ams_edit_overlay().handle_scan_tag(); }},
         {"ams_edit_picker_search_cb",
          [](lv_event_t* e) {
              const char* text = lv_textarea_get_text(lv_event_get_target_obj(e));

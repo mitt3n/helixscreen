@@ -11,6 +11,8 @@
 #if HELIX_HAS_IFS
 #include "ams_backend_ad5x_ifs.h"
 #endif
+#include "ui_update_queue.h"
+
 #include "ams_backend_afc.h"
 #include "ams_backend_happy_hare.h"
 #include "ams_backend_toolchanger.h"
@@ -1219,6 +1221,52 @@ AmsError AmsBackendMock::check_all_gates() {
         return simulate_transient_action(AmsAction::CHECKING, "Checking all slots");
     }
 
+    return AmsErrorHelper::success();
+}
+
+bool AmsBackendMock::supports_tag_read() const {
+    return system_info_.type == AmsType::CFS;
+}
+
+AmsError AmsBackendMock::read_slot_tag(int slot_index, TagReadCallback on_done) {
+    if (!supports_tag_read()) {
+        return AmsBackend::read_slot_tag(slot_index, std::move(on_done));
+    }
+    {
+        std::lock_guard<std::mutex> lock(mutex_);
+        if (!slots_.is_valid_index(slot_index)) {
+            return AmsErrorHelper::invalid_slot(lane_noun_locked(), slot_index,
+                                                slots_.slot_count() - 1);
+        }
+    }
+    spdlog::info("[AMS Mock] Executing G-code: BOX_INFO_REFRESH for slot {}", slot_index);
+    // The lane's VendorCache already restates the slot, which is what a tag
+    // that agrees with it would read.
+    helix::ui::queue_update("AmsBackendMock::read_slot_tag", [slot_index, on_done]() {
+        if (on_done) {
+            on_done(AmsErrorHelper::success(), {slot_index});
+        }
+    });
+    return AmsErrorHelper::success();
+}
+
+AmsError AmsBackendMock::read_all_tags(TagReadCallback on_done) {
+    if (!supports_tag_read()) {
+        return AmsBackend::read_all_tags(std::move(on_done));
+    }
+    std::vector<int> slots;
+    {
+        std::lock_guard<std::mutex> lock(mutex_);
+        for (int i = 0; i < slots_.slot_count(); ++i) {
+            slots.push_back(i);
+        }
+    }
+    spdlog::info("[AMS Mock] Executing G-code: BOX_INFO_REFRESH for every unit");
+    helix::ui::queue_update("AmsBackendMock::read_all_tags", [slots, on_done]() {
+        if (on_done) {
+            on_done(AmsErrorHelper::success(), slots);
+        }
+    });
     return AmsErrorHelper::success();
 }
 

@@ -86,6 +86,7 @@ class AmsContextMenu : public ContextMenu {
         CLEAR_SPOOL,      ///< Clear assigned spool from empty slot
         SPOOLMAN,         ///< Assign Spoolman spool
         SCAN_QR,          ///< Scan QR code to assign spool
+        SCAN_TAG,         ///< Re-read the spool's tag and check it against Spoolman
         PURGE,            ///< Purge the current filament through the nozzle
         TOGGLE_BYPASS     ///< Engage or disengage bypass (external spool only)
     };
@@ -250,6 +251,7 @@ class AmsContextMenu : public ContextMenu {
     void handle_bypass_toggle();
     void handle_spoolman();
     void handle_scan_qr();
+    void handle_scan_tag();
     void handle_tool_changed();
     void handle_backup_changed();
 
@@ -447,6 +449,7 @@ class AmsContextMenu : public ContextMenu {
     static void on_bypass_toggle_cb(lv_event_t* e);
     static void on_spoolman_cb(lv_event_t* e);
     static void on_scan_qr_cb(lv_event_t* e);
+    static void on_scan_tag_cb(lv_event_t* e);
     static void on_tool_changed_cb(lv_event_t* e);
     static void on_backup_changed_cb(lv_event_t* e);
 };

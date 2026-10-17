@@ -2205,13 +2205,27 @@ TEST_CASE("CFS set_tool_mapping emits BOX_MODIFY_TN with TNN keys/values", "[ams
 // vender/color/material until BOX_INFO_REFRESH scans it. The "Refresh RFID"
 // device action probes every connected unit: ADDR = 1-based unit index, NUM=15
 // (0b1111) = all four slots. Verified on K2 Plus.
+// Captures the completion-callback form of execute_gcode, which the tag read
+// dispatches through, and holds each send's two callbacks for the test to fire.
+class CfsTagReadHelper : public CfsRemapHelper {
+  public:
+    using CfsRemapHelper::execute_gcode;
+    AmsError execute_gcode(const std::string& gcode, std::function<void()> on_complete,
+                           std::function<void(const MoonrakerError&)> on_error,
+                           bool /*silent*/) override {
+        captured.push_back(gcode);
+        completions.push_back(std::move(on_complete));
+        failures.push_back(std::move(on_error));
+        return AmsErrorHelper::success();
+    }
+    std::vector<std::function<void()>> completions;
+    std::vector<std::function<void(const MoonrakerError&)>> failures;
+};
+
 TEST_CASE("CFS refresh_rfid probes each connected unit via BOX_INFO_REFRESH",
           "[ams][cfs][refresh]") {
-    // Neutralize on_started() — its printer.objects.query needs a live client.
-    struct Helper : CfsRemapHelper {
-        void on_started() override {}
-    };
-    Helper h;
+    CfsTagReadHelper h;
+    h.mark_running();
 
     SECTION("single connected unit → ADDR=1 NUM=15") {
         CfsTestAccess::set_connected_units(h, 1);
@@ -2228,12 +2242,128 @@ TEST_CASE("CFS refresh_rfid probes each connected unit via BOX_INFO_REFRESH",
                                                        "BOX_INFO_REFRESH ADDR=2 NUM=15"});
     }
 
-    SECTION("no connected units → no gcode emitted") {
+    SECTION("no connected units → refused, no gcode emitted") {
         CfsTestAccess::set_connected_units(h, 0);
         auto err = h.execute_device_action("refresh_rfid", std::any{});
-        REQUIRE(err.result == AmsResult::SUCCESS);
+        REQUIRE(err.result != AmsResult::SUCCESS);
         REQUIRE(h.captured.empty());
     }
+}
+
+// =============================================================================
+// CFS tag read: read_slot_tag / read_all_tags
+// =============================================================================
+
+namespace {
+struct TagReadOutcome {
+    bool called = false;
+    AmsError result = AmsErrorHelper::success();
+    std::vector<int> slots;
+};
+
+AmsBackend::TagReadCallback record_into(TagReadOutcome& out) {
+    return [&out](const AmsError& result, std::vector<int> slots) {
+        out.called = true;
+        out.result = result;
+        out.slots = std::move(slots);
+    };
+}
+} // namespace
+
+TEST_CASE_METHOD(LVGLTestFixture, "CFS tag read refreshes the asked bays and reports once answered",
+                 "[ams][cfs][tag_read]") {
+    CfsTagReadHelper h;
+    h.mark_running();
+    // Unit 1 holds a spool in bay B, unit 2 in bay C.
+    CfsTestAccess::set_unit_bays(h, {false, true, false, false, false, false, true, false});
+    REQUIRE(h.supports_tag_read());
+    TagReadOutcome out;
+
+    SECTION("one bay: ADDR is the unit, NUM the bay's bit") {
+        REQUIRE(h.read_slot_tag(1, record_into(out)).success());
+        REQUIRE(h.captured == std::vector<std::string>{"BOX_INFO_REFRESH ADDR=1 NUM=2"});
+
+        helix::ui::UpdateQueue::instance().drain();
+        CHECK_FALSE(out.called); // the box has not answered yet
+
+        h.completions.at(0)();
+        helix::ui::UpdateQueue::instance().drain();
+        REQUIRE(out.called);
+        CHECK(out.result.success());
+        CHECK(out.slots == std::vector<int>{1});
+    }
+
+    SECTION("a bay on the second unit") {
+        REQUIRE(h.read_slot_tag(6, record_into(out)).success());
+        REQUIRE(h.captured == std::vector<std::string>{"BOX_INFO_REFRESH ADDR=2 NUM=4"});
+    }
+
+    SECTION("an empty bay is refused and nothing is sent") {
+        auto err = h.read_slot_tag(0, record_into(out));
+        CHECK(err.result == AmsResult::SLOT_NOT_AVAILABLE);
+        CHECK(h.captured.empty());
+        helix::ui::UpdateQueue::instance().drain();
+        CHECK_FALSE(out.called);
+    }
+
+    SECTION("a rejected command reaches the caller as a failure") {
+        REQUIRE(h.read_slot_tag(1, record_into(out)).success());
+        MoonrakerError e;
+        e.type = MoonrakerErrorType::JSON_RPC_ERROR;
+        e.message = "Unknown command";
+        h.failures.at(0)(e);
+        helix::ui::UpdateQueue::instance().drain();
+        REQUIRE(out.called);
+        CHECK(out.result.result == AmsResult::COMMAND_FAILED);
+    }
+
+    SECTION("a timed-out command still reports, as a read that may have run") {
+        REQUIRE(h.read_slot_tag(1, record_into(out)).success());
+        MoonrakerError e;
+        e.type = MoonrakerErrorType::TIMEOUT;
+        h.failures.at(0)(e);
+        helix::ui::UpdateQueue::instance().drain();
+        REQUIRE(out.called);
+        CHECK(out.result.success());
+    }
+
+    SECTION("every unit: one refresh each, reported after the last answers") {
+        REQUIRE(h.read_all_tags(record_into(out)).success());
+        REQUIRE(h.captured == std::vector<std::string>{"BOX_INFO_REFRESH ADDR=1 NUM=15",
+                                                       "BOX_INFO_REFRESH ADDR=2 NUM=15"});
+        h.completions.at(0)();
+        helix::ui::UpdateQueue::instance().drain();
+        CHECK_FALSE(out.called);
+
+        h.completions.at(1)();
+        helix::ui::UpdateQueue::instance().drain();
+        REQUIRE(out.called);
+        CHECK(out.slots == std::vector<int>{0, 1, 2, 3, 4, 5, 6, 7});
+    }
+}
+
+TEST_CASE("CFS tag read is refused where it cannot run", "[ams][cfs][tag_read]") {
+    CfsTagReadHelper h;
+    CfsTestAccess::set_unit_bays(h, {true, true, true, true});
+
+    SECTION("backend not started") {
+        CHECK_FALSE(h.read_slot_tag(0).success());
+        CHECK(h.captured.empty());
+    }
+
+    SECTION("a flat-schema module never exposed the read") {
+        h.mark_running();
+        CfsTestAccess::set_flat_fork(h, -1);
+        CHECK_FALSE(h.supports_tag_read());
+        CHECK(h.read_slot_tag(0).result == AmsResult::NOT_SUPPORTED);
+        CHECK(h.read_all_tags().result == AmsResult::NOT_SUPPORTED);
+        CHECK(h.captured.empty());
+    }
+}
+
+TEST_CASE("CFS tag refresh gcode names the unit and the bay bits", "[ams][cfs][tag_read]") {
+    CHECK(AmsBackendCfs::tag_refresh_gcode(1, 1) == "BOX_INFO_REFRESH ADDR=1 NUM=1");
+    CHECK(AmsBackendCfs::tag_refresh_gcode(4, 8) == "BOX_INFO_REFRESH ADDR=4 NUM=8");
 }
 
 // =============================================================================

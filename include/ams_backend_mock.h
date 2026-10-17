@@ -174,6 +174,10 @@ class AmsBackendMock : public AmsBackend {
     AmsError move_selector(int delta) override;
     AmsError check_gate(int slot_index) override;
     AmsError check_all_gates() override;
+    /// The CFS persona reads tags; the read restates what the slot holds.
+    [[nodiscard]] bool supports_tag_read() const override;
+    AmsError read_slot_tag(int slot_index, TagReadCallback on_done = {}) override;
+    AmsError read_all_tags(TagReadCallback on_done = {}) override;
     [[nodiscard]] std::string reset_button_label() const override {
         return system_info_.type == AmsType::HAPPY_HARE ? std::string("Home")
                                                         : std::string("Reset");

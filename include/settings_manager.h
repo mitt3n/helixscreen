@@ -34,6 +34,12 @@ enum class ZMovementStyle { AUTO = 0, BED_MOVES = 1, NOZZLE_MOVES = 2 };
 enum class MotionLayout { Pad = 0, Arrows = 1, ArrowsHome = 2, AxisRows = 3 };
 inline constexpr int MOTION_LAYOUT_COUNT = 4;
 
+/// What the slot menu's and slot editor's scan button does. Auto reads the
+/// spool's tag where the filament system has a reader, else scans a QR code;
+/// Rfid falls back to QR on a system without one.
+enum class SpoolScanMethod { Off = 0, Auto = 1, QrCode = 2, Rfid = 3 };
+inline constexpr int SPOOL_SCAN_METHOD_COUNT = 4;
+
 /** @brief Toolhead rendering style (Auto=detect from printer type, or force) */
 enum class ToolheadStyle {
     AUTO = 0,
@@ -561,6 +567,21 @@ class SettingsManager {
         return settings_.subject(Key::AmsKeepSpoolInfoOnEject);
     }
 
+    /** @brief What the slot scan button does (default Auto). Per-printer setting. */
+    SpoolScanMethod get_ams_spool_scan_method() const {
+        return static_cast<SpoolScanMethod>(settings_.get(Key::AmsSpoolScanMethod));
+    }
+
+    /** @brief Set what the slot scan button does (clamped, persisted) */
+    void set_ams_spool_scan_method(SpoolScanMethod method) {
+        settings_.set(Key::AmsSpoolScanMethod, static_cast<int>(method));
+    }
+
+    /** @brief Spool scan method subject (integer, SpoolScanMethod values) */
+    lv_subject_t* subject_ams_spool_scan_method() {
+        return settings_.subject(Key::AmsSpoolScanMethod);
+    }
+
     /**
      * @brief Expose the bypass controls even though the firmware reports none.
      *
@@ -873,6 +894,7 @@ class SettingsManager {
         AmsAlwaysShowBypassSpool,
         AmsKeepSpoolInfoOnEject,
         AmsForceBypassControls,
+        AmsSpoolScanMethod,
         FilamentAutoCooldown,
         FilamentAutoOpenEditor,
         ConsoleFilterTemps,
